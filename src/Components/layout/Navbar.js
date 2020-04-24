@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+
+
 import SignedOutLinks from '../auth/SignedOutLinks'
+import image from '../../images/headshotImages/newheadshot.jpg'
 
 export class Navbar extends Component {
   render() {
     return (
       <div className='navbar-container'>
         <div className="navbar-container__image">
-          <img src="http://via.placeholder.com/220x220" alt="headshot"/>
+          <img src={image} alt="headshot"/>
         </div>
 
         <div className="navbar-container__description">

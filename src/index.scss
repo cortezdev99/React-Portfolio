@@ -2,4 +2,10 @@ body {
   margin: 0px;
 }
 
-@import './Styles/navbar.scss'
+.App {
+  display: flex;
+  grid-template-columns: 382.19px 1fr;
+}
+
+@import './Styles/navbar.scss';
+@import './Styles/homepage.scss';
