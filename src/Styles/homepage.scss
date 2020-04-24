@@ -7,4 +7,23 @@
       height: 100%;
     }
   }
+
+  &__heading {
+    display: grid;
+    grid-template-columns: 100px [s] 1fr [e] 100px;
+    justify-items: center;
+    align-items: center;
+
+    div {
+      padding: 2rem 0px;
+      font-size: 18px;
+      font-weight: 600;
+      grid-column: s/e;
+    }
+
+    .line {
+      width: 100%;
+      border-top: 1px solid #ccc;
+    }
+  }
 }

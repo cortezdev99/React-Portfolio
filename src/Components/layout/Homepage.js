@@ -10,7 +10,10 @@ class Homepage extends Component {
           <img src={image} alt="mountains"/>
         </div>
 
-        
+        <div className="homepage__heading">
+          <div>Check out my projects!</div>
+          <div className='line'></div>
+        </div>
       </div>
     )
   }
