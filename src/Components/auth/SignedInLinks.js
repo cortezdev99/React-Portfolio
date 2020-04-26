@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import signOut from '../../store/actions/authActions'
+import { signOut } from '../../store/actions/authActions'
 
-export class SignedInLinks extends Component {
+class SignedInLinks extends Component {
   render() {
-    const { signOut } = this.props
+    console.log(this.props)
     return (
       <div className='signed-in-links'>
         <div className='signed-in-links__link'>
@@ -26,7 +26,7 @@ export class SignedInLinks extends Component {
         </div>
 
         <div className='signed-in-links__link'>
-          <Link exact to='/' onClick={signOut}>Logout</Link>
+          <Link onClick={() => this.props.signOut()} to='/' >Logout</Link>
         </div>
       </div>
     )

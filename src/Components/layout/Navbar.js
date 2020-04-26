@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 
 import SignedOutLinks from '../auth/SignedOutLinks'
 import image from '../../images/headshotImages/newheadshot.jpg'
+import SignedInLinks from '../auth/SignedInLinks'
 
 export class Navbar extends Component {
   render() {
+    const { auth } = this.props
     return (
       <div className='navbar-container'>
         <div className="navbar-container__image">
@@ -17,7 +19,7 @@ export class Navbar extends Component {
         </div>
 
         <div className="navbar-container__links">
-          <SignedOutLinks />
+          { auth.uid ? <SignedInLinks /> : <SignedOutLinks />}
         </div>
 
         <div className="navbar-container__quick-links">
@@ -39,9 +41,8 @@ export class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
-
+    auth: state.firebase.auth
   }
 }
 
