@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import image from '../../images/homepageImages/mountains.jpg'
+import ProjectList from '../projects/ProjectList'
 
 class Homepage extends Component {
   render() {
+    const { projects } = this.props
     return (
       <div className='homepage'>
         <div className="homepage__image">
@@ -42,9 +45,19 @@ class Homepage extends Component {
             Python
           </div>
         </div>
+
+        <div className="homepage__projects">
+          <ProjectList projects={projects} />
+        </div>
       </div>
     )
   }
 }
 
-export default Homepage
+const mapStateToProps = (state) => {
+  return {
+    projects: state.project.projects
+  }
+}
+
+export default connect(mapStateToProps)(Homepage)
