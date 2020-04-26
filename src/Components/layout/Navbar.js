@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { connect } from 'react-redux'
 
 import SignedOutLinks from '../auth/SignedOutLinks'
 import image from '../../images/headshotImages/newheadshot.jpg'
@@ -38,4 +38,11 @@ export class Navbar extends Component {
   }
 }
 
-export default Navbar
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps)(Navbar)

@@ -42,6 +42,19 @@
         padding-bottom: 1rem;
       }
     }
+
+    .signed-in-links {
+      padding: 2rem 0px 1rem 0px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__link {
+        padding-bottom: 1rem;
+      }
+    }
   }
 
   &__quick-links {
