@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { firestoreConnect } from 'react-redux-firebase'
 
 import image from '../../images/homepageImages/mountains.jpg'
 import ProjectList from '../projects/ProjectList'
@@ -56,8 +58,13 @@ class Homepage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    projects: state.project.projects
+    projects: state.firestore.ordered.projects
   }
 }
 
-export default connect(mapStateToProps)(Homepage)
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'projects' }
+  ])
+)(Homepage)
