@@ -7,15 +7,15 @@ class Homepage extends Component {
     return (
       <div className='homepage'>
         <div className="homepage__image">
-
-          {/* <img src={image} alt="mountains"/> */}
           <div className='image'style={{backgroundImage: "url(" + image + ")"}}>
-            <div className="homepage__text typewriter-animation">
-              Hello there, my name's Michael.
-            </div>
+            <div className='shader'>
+              <div className="homepage__text typewriter-animation">
+                Hello there, my name's Michael.
+              </div>
 
-            <div className="homepage__text__2 typewriter-animation__2">
-              I'm a FullStack Software Developer.
+              <div className="homepage__text__2 typewriter-animation__2">
+                I'm a FullStack Software Developer.
+              </div>
             </div>
           </div>
 
