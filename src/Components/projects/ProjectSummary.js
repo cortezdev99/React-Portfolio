@@ -5,7 +5,7 @@ const ProjectSummary = ({project}) => {
     <div className='project-summary'>
       <div className='project-summary__front project-summary__background-image'>
         <div className='project-summary__front__logo-image'>
-          <img src="https://via.placeholder.com/1" alt="logo image"/>
+          <img src="https://via.placeholder.com/1" alt="logo"/>
         </div>
       </div>
 
