@@ -1,0 +1,75 @@
+// PLACE FRONT AND BACK ON TOP OF EACHOTHER
+.project-summary {
+  display: grid;
+  grid-template-rows: 1/-1;
+  grid-template-columns: 1/-1;
+
+  & > * {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+  }
+}
+
+// CARD FLIP
+.project-summary {
+  width: 100%;
+  height: 100%;
+
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+
+  &__front,
+  &__back {
+    backface-visibility: hidden;
+    transition: all .4s ease-in-out;
+  }
+
+  &__back {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__back {
+    transform: rotateY(0deg);
+    background-color: black;
+  }
+}
+
+// OTHER STYLES
+
+.project-summary__front {
+  width: 100%;
+  height: 100%;
+
+  &__logo-image {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // &__title {
+  //   width: 100%;
+  //   height: 100%;
+
+    // display: grid;
+
+    // justify-content: center;
+    // align-items: flex-end;
+  // }
+}
+
+.project-summary__back {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

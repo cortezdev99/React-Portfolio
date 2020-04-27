@@ -6,7 +6,6 @@ import { signOut } from '../../store/actions/authActions'
 
 class SignedInLinks extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className='signed-in-links'>
         <div className='signed-in-links__link'>

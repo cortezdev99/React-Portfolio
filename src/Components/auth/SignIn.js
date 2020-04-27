@@ -29,9 +29,9 @@ class SignIn extends Component {
     const { authError, auth } = this.props
 
     if (auth.uid) {
-      <Redirect to='/' />
+      return <Redirect to='/' />
     }
-    
+
     return (
       <div className='sign-in__container'>
         <form onSubmit={this.handleSubmit}>
