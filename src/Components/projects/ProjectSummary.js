@@ -3,9 +3,9 @@ import React from 'react'
 const ProjectSummary = ({project}) => {
   return (
     <div className='project-summary'>
-      <div className='project-summary__front project-summary__background-image'>
+      <div className='project-summary__front project-summary__background-image' style={{ backgroundImage: "url(" + project.urlBackground + ")"}}>
         <div className='project-summary__front__logo-image'>
-          <img src="https://via.placeholder.com/1" alt="logo"/>
+          <img src={project.urlLogo} alt="logo"/>
         </div>
       </div>
 
