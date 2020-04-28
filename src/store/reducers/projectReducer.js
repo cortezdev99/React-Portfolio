@@ -3,7 +3,8 @@ const initState = {
     {id: '1', title: 'World of Vapes', content: 'blah blah blah', link: 'http://something.com'},
     {id: '2', title: 'React Redux Practice', content: 'blah blah blah', link: 'http://somethingElse.com'},
     {id: '3', title: 'First Portfolio', content: 'blah blah blah', link: 'http://somethingElseElse.com'}
-  ]
+  ],
+  filteredProjects: []
 }
 
 const projectReducer = (state = initState, action) => {
@@ -14,10 +15,17 @@ const projectReducer = (state = initState, action) => {
         ...state
       }
     case 'CREATE_PROJECT':
-      console.log('created project', action.project)
+      console.log('created project', action.payload)
       return {
-        ...state
+        ...state,
+        projects: action.payload
       }
+    case 'FILTER_PROJECTS_WITH_CATEGORY_ID':
+      console.log(action.payload)
+      return {
+        filteredProjects: action.payload
+      }
+      
     default:
       return {
         ...state

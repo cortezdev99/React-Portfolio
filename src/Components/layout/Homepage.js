@@ -5,10 +5,27 @@ import { firestoreConnect } from 'react-redux-firebase'
 
 import image from '../../images/homepageImages/mountains.jpg'
 import ProjectList from '../projects/ProjectList'
+import { filterProjects } from '../../store/actions/projectActions'
 
 class Homepage extends Component {
+
+  handleFilterProjects = (_id) => {
+    this.props.filterProjects(_id)
+  }
+
   render() {
-    const { projects } = this.props
+    const { projects, filteredProjects } = this.props
+
+    const projectList = filteredProjects[0] ? (
+        <div className="homepage__projects">
+          <ProjectList projects={filteredProjects} />
+        </div>
+    ) : (
+      <div className="homepage__projects">
+          <ProjectList projects={projects} />
+      </div>
+    )
+
     return (
       <div className='homepage'>
         <div className="homepage__image">
@@ -23,8 +40,6 @@ class Homepage extends Component {
               </div>
             </div>
           </div>
-
-
         </div>
 
 
@@ -34,23 +49,21 @@ class Homepage extends Component {
         </div>
 
         <div className="homepage__project-filter">
-          <div className='homepage__project-filter__all btn'>
+          <div className='homepage__project-filter__all btn' onClick={() => this.handleFilterProjects(0)}>
             All
           </div>
-          <div className='homepage__project-filter__react btn'>
+          <div className='homepage__project-filter__react btn' onClick={() => this.handleFilterProjects(2)}>
             React
           </div>
-          <div className='homepage__project-filter__firebase btn'>
+          <div className='homepage__project-filter__firebase btn' onClick={() => this.handleFilterProjects(3)}>
             Firebase
           </div>
-          <div className='homepage__project-filter__python btn'>
+          <div className='homepage__project-filter__python btn' onClick={() => this.handleFilterProjects(1)}>
             Python
           </div>
         </div>
 
-        <div className="homepage__projects">
-          <ProjectList projects={projects} />
-        </div>
+        { projectList }
       </div>
     )
   }
@@ -58,12 +71,19 @@ class Homepage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    projects: state.firestore.ordered.projects
+    projects: state.firestore.ordered.projects,
+    filteredProjects: state.project.filteredProjects
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    filterProjects: (_id) => dispatch(filterProjects(_id))
   }
 }
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     { collection: 'projects' }
   ])
