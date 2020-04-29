@@ -16,23 +16,21 @@ export const filterProjects = (_id) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     var filteredProjects = [];
     const firestore = getFirestore();
-    firestore.collection('projects').get().then((snapshot) => {
+    firestore.collection('projects').where('belongsTo', 'array-contains-any', [_id]).get().then((snapshot) => {
       snapshot.forEach(doc => {
-        const projects = [];
-        projects.push(doc.data())
-        projects.map(project => {
-          project.belongsTo.map(categoryId => {
-            if (categoryId === _id) {
-              filteredProjects.push(project)
-              dispatch({ type: 'FILTER_PROJECTS_WITH_CATEGORY_ID', payload: filteredProjects})
-            } else {
-              return filterProjects
-            }
-            return null
-          })
-          return null
-        })
+        // const projects = [];
+        filteredProjects.push(doc.data())
+
+        // projects.push(doc.data())
+        // projects.map(project => {
+        //   if (project.belongsTo.includes(_id)) {
+        //     filteredProjects.push(project)
+        //     dispatch({ type: 'FILTER_PROJECTS_WITH_CATEGORY_ID', payload: filteredProjects })
+        //   }       
+        // })
       })
+      console.log(filteredProjects)
+      dispatch({ type: 'FILTER_PROJECTS_WITH_CATEGORY_ID', payload: filteredProjects })
     })
   }
 }

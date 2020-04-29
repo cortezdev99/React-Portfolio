@@ -148,7 +148,6 @@ class CreateProject extends Component {
             fileNameBackground: this.fileInput.current.files[0].name
           })
         }).then(() => {
-          
             const uploadTaskLogo = storage.ref(`logoImages/${this.fileInputTwo.current.files[0].name}`).put(this.fileInputTwo.current.files[0], metadata)
             uploadTaskLogo.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
               

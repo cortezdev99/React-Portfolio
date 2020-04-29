@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ProjectSummary = ({project}) => {
+  // console.log(project)
   return (
     <div className='project-summary'>
       <div className='project-summary__front project-summary__background-image' style={{ backgroundImage: "url(" + project.urlBackground + ")"}}>

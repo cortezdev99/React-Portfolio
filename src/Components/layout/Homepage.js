@@ -9,16 +9,23 @@ import { filterProjects } from '../../store/actions/projectActions'
 
 class Homepage extends Component {
 
+  // shouldComponentUpdate(nextProps) {
+  //   if (this.props != nextProps) {
+  //     (_id) => this.props.filterProjects(_id)
+  //   }
+  //   return true
+  // }
+
   handleFilterProjects = (_id) => {
     this.props.filterProjects(_id)
   }
 
   render() {
     const { projects, filteredProjects } = this.props
-
-    const projectList = filteredProjects[0] ? (
+    console.log(filteredProjects)
+    const projectList = filteredProjects.length > 0 ? (
         <div className="homepage__projects">
-          <ProjectList projects={filteredProjects} />
+          <ProjectList projects={projects} filteredProjects={filteredProjects}  />
         </div>
     ) : (
       <div className="homepage__projects">
