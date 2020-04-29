@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import ProjectSummary from './ProjectSummary'
 
 const ProjectList = ({projects, filteredProjects}) => {
+  var index = 0
 return (
     <div className="project-list__container">
       {
@@ -18,11 +19,9 @@ return (
         })
         ) : (
           filteredProjects.map(project => {
-            // debugger;
-            console.log(filteredProjects)
-            console.log(project)
+            index += 1
             return (
-              <Link to={`/project/${project.urlBackground}`} key={project.urlBackground}>
+              <Link to={`/project/${index}`} key={index}>
                 <ProjectSummary project={project} />
               </Link>
             )

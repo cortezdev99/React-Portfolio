@@ -22,7 +22,6 @@ class Homepage extends Component {
 
   render() {
     const { projects, filteredProjects } = this.props
-    console.log(filteredProjects)
     const projectList = filteredProjects.length > 0 ? (
         <div className="homepage__projects">
           <ProjectList projects={projects} filteredProjects={filteredProjects}  />
@@ -32,6 +31,7 @@ class Homepage extends Component {
           <ProjectList projects={projects} />
       </div>
     )
+
 
     return (
       <div className='homepage'>
