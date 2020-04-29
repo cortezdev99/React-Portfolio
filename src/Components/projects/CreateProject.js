@@ -105,7 +105,7 @@ class CreateProject extends Component {
           })
         }).then(() => {
           if (this.state.done) {
-            console.log(this.state)
+            this.props.createProject(this.state)
             this.setState({
               done: false
             })
