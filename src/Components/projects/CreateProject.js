@@ -20,10 +20,14 @@ class CreateProject extends Component {
       fileNameBackground: '',
       urlLogo: '',
       progressLogo: '',
-      fileNameLogo: ''
+      fileNameLogo: '',
+      urlBanner: '',
+      progressBanner: '',
+      fileNameBanner: ''
     }
     this.fileInput = React.createRef();
     this.fileInputTwo = React.createRef();
+    this.fileInputThree = React.createRef();
   }
 
   handleBelongsToChange = (event) => {
@@ -110,7 +114,7 @@ class CreateProject extends Component {
         })
       }
     )
-  } else { 
+  } else if (this.fileInput.current.files[0] && this.fileInputTwo.current.files[0] && !this.fileInputThree.current.files[0]) { 
       const metadata = {
         contentType: 'image/jpeg'
       }
@@ -187,6 +191,117 @@ class CreateProject extends Component {
         })
       }
     )
+  } else {
+      const metadata = {
+        contentType: 'image/jpeg'
+      }
+
+      const uploadTask = storage.ref(`backgroundImages/${this.fileInput.current.files[0].name}`).put(this.fileInput.current.files[0], metadata)
+
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
+        
+        //progress function ...
+        const progressBackground = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+
+        this.setState({
+          progressBackground: progressBackground
+        })
+      }, (error) => {
+        // error function...
+        switch (error.code) {
+          case 'storage/unauthorized':
+            // User doesn't have permission to access the object
+            break;
+          case 'storage/canceled':
+            // User canceled the upload
+            break;
+          case 'storage/unknown':
+            // Unknown error occurred, inspect error.serverResponse
+            break;
+          default:
+            break;
+        }
+      }, () => {
+        // complete function ...
+        storage.ref('backgroundImages').child(this.fileInput.current.files[0].name).getDownloadURL().then(url => {
+          this.setState({
+            urlBackground: url,
+            fileNameBackground: this.fileInput.current.files[0].name
+          })
+        }).then(() => {
+            const uploadTaskLogo = storage.ref(`logoImages/${this.fileInputTwo.current.files[0].name}`).put(this.fileInputTwo.current.files[0], metadata)
+            uploadTaskLogo.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
+              
+              //progress function ...
+              const progressLogo = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+
+              this.setState({
+                progressLogo: progressLogo
+              })
+            }, (error) => {
+              // error function...
+              switch (error.code) {
+                case 'storage/unauthorized':
+                  // User doesn't have permission to access the object
+                  break;
+                case 'storage/canceled':
+                  // User canceled the upload
+                  break;
+                case 'storage/unknown':
+                  // Unknown error occurred, inspect error.serverResponse
+                  break;
+                default:
+                  break;
+              }
+            }, () => {
+              // complete function ...
+              storage.ref('logoImages').child(this.fileInputTwo.current.files[0].name).getDownloadURL().then(url => {
+                this.setState({
+                  urlLogo: url,
+                  fileNameLogo: this.fileInputTwo.current.files[0].name
+                })
+              }).then(() => {
+                const uploadTaskThree = storage.ref(`bannerImages/${this.fileInputThree.current.files[0].name}`).put(this.fileInputThree.current.files[0], metadata)
+
+                uploadTaskThree.on(firebase.storage.TaskEvent.STATE_CHANGED, (snapshot) => {
+                  //progress function ...
+                  const progressBanner = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+
+                  this.setState({
+                    progressBanner: progressBanner
+                  })
+                }, (error) => {
+                  // error function ...
+                  switch (error.code) {
+                    case 'storage/unauthorized':
+                      // User doesn't have permission to access the object
+                      break;
+                    case 'storage/canceled':
+                      // User canceled the upload
+                      break;
+                    case 'storage/unknown':
+                      // Unknown error occurred, inspect error.serverResponse
+                      break;
+                    default:
+                      break;
+                  }
+                }, () => {
+                  // complete function ...
+                  storage.ref('bannerImages').child(this.fileInputThree.current.files[0].name).getDownloadURL().then(url => {
+                    this.setState({
+                      urlBanner: url,
+                      fileNameBanner: this.fileInputThree.current.files[0].name
+                    })
+                  }).then(() => {
+                    this.props.createProject(this.state)
+                  })
+                })
+              })
+            }
+          )
+        })
+      }
+    )
   }
 }
 
@@ -239,6 +354,14 @@ class CreateProject extends Component {
 
           <div className="progress">
               <progress value={this.state.progressLogo} max="100" />
+          </div>
+
+          <div className='create-project__input'>
+            <input type='file' id='bannerImage' ref={this.fileInputThree} placeholder='Upload Banner Image' onChange={this.handleChange} />
+          </div>
+
+          <div className="progress">
+              <progress value={this.state.progressBanner} max="100" />
           </div>
 
           <div className='create-project__button'>
