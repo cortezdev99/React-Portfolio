@@ -5,15 +5,16 @@ import ProjectSummary from './ProjectSummary'
 
 const ProjectList = ({projects, filteredProjects}) => {
   var index = 0
-return (
+  return (
     <div className="project-list__container">
       {
         filteredProjects === undefined ? (
           projects && projects.map(project => {
             // debugger;
+          console.log(project.id)
           return (
             <Link to={`/project/${project.id}`} key={project.id}>
-              <ProjectSummary project={project} />
+              <ProjectSummary project={project} projectId={project.id}/>
             </Link>
           )
         })

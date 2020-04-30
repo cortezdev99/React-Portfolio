@@ -3,26 +3,27 @@ import { getFirestore } from 'redux-firestore'
 import { getFirebase } from 'react-redux-firebase'
 
 
-class DeleteJuice extends Component {
+class DeleteProject extends Component {
   render() {
-    const { project } = this.props
+    const { project, id } = this.props
     const handleDeleteDoc = (project) => {
       const firestore = getFirestore()
       const firebase = getFirebase()
       const storage = firebase.storage()
       const storageRef = storage.ref()
-      const imagesRef = storageRef.child('juiceImages')
-      const condition = "" || null || undefined || false
+      const imagesBackgroundRef = storageRef.child('backgroundImages')
+      const imagesLogoRef = storageRef.child('logoImages')
+      const imagesBannerRef = storageRef.child('bannerImages')
 
-      if (project.fileNameBackground === condition) {
-        firestore.collection("projects").doc(`${project.id}`).delete().then(() => {
+      if (project.fileNameBackground === '' || undefined || false || null) {
+        firestore.collection("projects").doc(`${id}`).delete().then(() => {
           console.log('successfully deleted')
         }).catch((err) => {
           console.log(err)
         })
-      } else if (project.fileNameBackground !== condition && project.fileNameBanner === condition && project.fileNameLogo === condition) {
-        imagesRef.child(`${project.fileNameBackground}`).delete().then(() => {
-          firestore.collection("projects").doc(`${project.id}`).delete().then(() => {
+      } else if (project.fileNameBackground !== '' && project.fileNameBanner === '' && project.fileNameLogo === '') {
+        imagesBackgroundRef.child(`${project.fileNameBackground}`).delete().then(() => {
+          firestore.collection("projects").doc(`${id}`).delete().then(() => {
             console.log('successfully deleted')
           }).catch((err) => {
             console.log(err)
@@ -30,10 +31,10 @@ class DeleteJuice extends Component {
         }).catch((err) => {
           console.log(err)
         })
-      } else if (project.fileNameBackground !== condition && project.fileNameBanner !== condition && project.fileNameLogo === condition) {
-        imagesRef.child(`${project.fileNameBackground}`).delete().then(() => {
-          imagesRef.child(`${project.fileNameLogo}`).delete().then(() => {
-            firestore.collection("projects").doc(`${project.id}`).delete().then(() => {
+      } else if (project.fileNameBackground !== '' && project.fileNameBanner !== '' && project.fileNameLogo === '') {
+        imagesBackgroundRef.child(`${project.fileNameBackground}`).delete().then(() => {
+          imagesLogoRef.child(`${project.fileNameLogo}`).delete().then(() => {
+            firestore.collection("projects").doc(`${id}`).delete().then(() => {
               console.log('successfully deleted')
             }).catch((err) => {
               console.log(err)
@@ -45,10 +46,10 @@ class DeleteJuice extends Component {
           console.log(err)
         })
       } else {
-        imagesRef.child(`${project.fileNameBackground}`).delete().then(() => {
-          imagesRef.child(`${project.fileNameLogo}`).delete().then(() => {
-            imagesRef.child(`${project.fileNameBanner}`).delete().then(() => {
-              firestore.collection("projects").doc(`${project.id}`).delete().then(() => {
+        imagesBackgroundRef.child(`${project.fileNameBackground}`).delete().then(() => {
+          imagesLogoRef.child(`${project.fileNameLogo}`).delete().then(() => {
+            imagesBannerRef.child(`${project.fileNameBanner}`).delete().then(() => {
+              firestore.collection("projects").doc(`${id}`).delete().then(() => {
                 console.log('successfully deleted')
               }).catch((err) => {
                 console.log(err)
@@ -73,4 +74,4 @@ class DeleteJuice extends Component {
   }
 }
 
-export default DeleteJuice
+export default DeleteProject

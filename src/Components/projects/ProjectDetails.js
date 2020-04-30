@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
-const ProjectDetails = (props) => {
-  const { project } = props;
+import DeleteProject from './DeleteProject'
 
+const ProjectDetails = (props) => {
+  const { project, auth, id } = props;
   if (project) {
     return (
       <div className='project-details__container'>
@@ -36,6 +37,8 @@ const ProjectDetails = (props) => {
           <div className='project-details__link'>
             {project.githubLink}
           </div>
+
+          { auth.uid ? <DeleteProject project={project} id={id} /> : null }
         </div>
       </div>
     )
@@ -53,7 +56,9 @@ const mapStateToProps = (state, ownProps) => {
   const projects = state.firestore.data.projects
   const project = projects ? projects[id] : null
   return {
-    project: project
+    project: project,
+    auth: state.firebase.auth,
+    id: id
   }
 }
 

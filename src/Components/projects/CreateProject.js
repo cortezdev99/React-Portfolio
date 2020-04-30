@@ -106,6 +106,10 @@ class CreateProject extends Component {
             [fileStateName]: fileName
           })
         }).then(() => {
+          if (!this.state.twoImages && !this.state.threeImages) {
+            this.setState({ done: true })
+          }
+
           if (this.state.done) {
             this.props.createProject(this.state)
             this.setState({
@@ -151,7 +155,7 @@ class CreateProject extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
      if (!this.fileInput.current.files[0]) {
-       console.log('no files to upload')
+       this.props.createProject(this.state)
      } else if (this.fileInput.current.files[0] && !this.fileInputTwo.current.files[0] && !this.fileInputThree.current.files[0]) {
        // upload of background image 
        this.handleImageUpload(this.fileInput.current.files[0], 'backgroundImages', this.fileInput.current.files[0].name, 'progressBackground', 'urlBackground', 'fileNameBackground', this.state.twoImages, this.state.threeImages)
