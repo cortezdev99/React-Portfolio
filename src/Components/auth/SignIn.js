@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
+import image from '../../images/signinImages/login.jpg'
 import { signIn } from '../../store/actions/authActions'
 
 class SignIn extends Component {
@@ -34,6 +35,9 @@ class SignIn extends Component {
 
     return (
       <div className='sign-in__container'>
+
+        <div className="sign-in__image" style={{backgroundImage: "url(" + image + ")"}} />
+
         <form onSubmit={this.handleSubmit}>
           <div className='sign-in__inputs'>
             <div className='sign-in__input'>
