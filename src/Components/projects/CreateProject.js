@@ -12,10 +12,12 @@ class CreateProject extends Component {
 
     this.state = {
       title: '',
+      shortContent: '',
       content: '',
-      link: '',
+      websiteLink: '',
       urlBackground: '',
       belongsTo: [0],
+      githubLink: '',
       progressBackground: '',
       fileNameBackground: '',
       urlLogo: '',
@@ -186,11 +188,19 @@ class CreateProject extends Component {
           </div>
 
           <div className='create-project__input'>
+            <input type='text' id='shortContent' placeholder='Short Description' onChange={this.handleChange} />
+          </div>
+
+          <div className='create-project__input'>
             <input type='text' id='content' placeholder='Content' onChange={this.handleChange} />
           </div>
 
           <div className='create-project__input'>
-            <input type='text' id='link' placeholder='Link' onChange={this.handleChange} />
+            <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
+          </div>
+
+          <div className='create-project__input'>
+            <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
           </div>
 
           <div className='create-project__input'>

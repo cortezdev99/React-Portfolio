@@ -9,20 +9,33 @@ const ProjectDetails = (props) => {
   if (project) {
     return (
       <div className='project-details__container'>
-        <div className='project-details__title'>
-          {project.title}
+        <div className='project-details__banner-image' style={{backgroundImage: "url(" + project.urlBanner + ")"}}>
+          <div className='project-details__logo'>
+            <img src={project.urlLogo} alt="logo" />
+          </div>
         </div>
-  
+        
+        <div className='grid'>
+          <div className='project-details__title'>
+            {project.title}
+
+            <div className='project-details__line' />
+          </div>
+        </div>
+
+
         <div className='project-details__content'>
           {project.content}
         </div>
-  
-        <div className='project-details__link'>
-          {project.link}
-        </div>
-  
-        <div className='project-details__type'>
-          {project.type}
+
+        <div className='links'>
+          <div className='project-details__link'>
+            {project.websiteLink}
+          </div>
+
+          <div className='project-details__link'>
+            {project.githubLink}
+          </div>
         </div>
       </div>
     )

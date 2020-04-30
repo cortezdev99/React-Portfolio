@@ -15,7 +15,7 @@ const ProjectSummary = ({project}) => {
           {project.title}
         </span>
         <span className='project-summary__content'>
-          {project.content}
+          {project.shortContent}
         </span>
       </div>
     </div>
