@@ -10,8 +10,6 @@ const ProjectList = ({projects, filteredProjects}) => {
       {
         filteredProjects === undefined ? (
           projects && projects.map(project => {
-            // debugger;
-          console.log(project.id)
           return (
             <Link to={`/project/${project.id}`} key={project.id}>
               <ProjectSummary project={project} projectId={project.id}/>

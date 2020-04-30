@@ -23,17 +23,17 @@ export class Navbar extends Component {
         </div>
 
         <div className="navbar-container__quick-links">
-          <div className="navbar-container__github">
+          <a className="navbar-container__link" href="https://github.com/Macattack1999-teck">
             Github
-          </div>
+          </a>
 
-          <div className="navbar-container__linked-in">
+          <a className="navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
             Linked In
-          </div>
+          </a>
 
-          <div className="navbar-container__resume">
+          <a className="navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
             Resume
-          </div>
+          </a>
         </div>
       </div>
     )
