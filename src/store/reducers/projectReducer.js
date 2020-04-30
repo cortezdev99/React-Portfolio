@@ -21,7 +21,6 @@ const projectReducer = (state = initState, action) => {
         projects: action.payload
       }
     case 'FILTER_PROJECTS_WITH_CATEGORY_ID':
-      console.log('hit reducer')
       return {
         ...state,
         filteredProjects: action.payload

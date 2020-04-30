@@ -8,16 +8,50 @@ import ProjectList from '../projects/ProjectList'
 import { filterProjects } from '../../store/actions/projectActions'
 
 class Homepage extends Component {
+  constructor() {
+    super() 
 
-  // shouldComponentUpdate(nextProps) {
-  //   if (this.props != nextProps) {
-  //     (_id) => this.props.filterProjects(_id)
-  //   }
-  //   return true
-  // }
+    this.state = {
+      active: false,
+      active1: false,
+      active2: false,
+      active3: false
+    }
+  }
 
   handleFilterProjects = (_id) => {
     this.props.filterProjects(_id)
+    console.log(_id)
+    
+    if (_id === 0) {
+      this.setState({
+        active: true,
+        active1: false,
+        active2: false,
+        active3: false
+      })
+    } else if (_id === 1) {
+      this.setState({
+        active: false,
+        active1: true,
+        active2: false,
+        active3: false
+      })
+    } else if (_id === 2) {
+      this.setState({
+        active: false,
+        active1: false,
+        active2: true,
+        active3: false
+      })
+    } else {
+      this.setState({
+        active: false,
+        active1: false,
+        active2: false,
+        active3: true
+      })
+    }
   }
 
   render() {
@@ -56,18 +90,44 @@ class Homepage extends Component {
         </div>
 
         <div className="homepage__project-filter">
-          <div className='homepage__project-filter__all btn' onClick={() => this.handleFilterProjects(0)}>
-            All
-          </div>
-          <div className='homepage__project-filter__react btn' onClick={() => this.handleFilterProjects(2)}>
-            React
-          </div>
-          <div className='homepage__project-filter__firebase btn' onClick={() => this.handleFilterProjects(3)}>
-            Firebase
-          </div>
-          <div className='homepage__project-filter__python btn' onClick={() => this.handleFilterProjects(1)}>
-            Python
-          </div>
+          { this.state.active ? ( <div className='homepage__project-filter__all btn active_filter' onClick={() => this.handleFilterProjects(0)}>
+              All
+            </div>
+          ) : (
+            <div className='homepage__project-filter__all btn' onClick={() => this.handleFilterProjects(0)}>
+              All
+            </div>
+          )} 
+
+          { this.state.active2 ? (
+            <div className='homepage__project-filter__react btn active_filter' onClick={() => this.handleFilterProjects(2)}>
+              React
+            </div>
+          ) : (
+            <div className='homepage__project-filter__react btn' onClick={() => this.handleFilterProjects(2)}>
+              React
+            </div>
+          )}
+          
+          { this.state.active3 ? (
+            <div className='homepage__project-filter__firebase btn active_filter' onClick={() => this.handleFilterProjects(3)}>
+              Firebase
+            </div>
+          ) : (
+            <div className='homepage__project-filter__firebase btn' onClick={() => this.handleFilterProjects(3)}>
+              Firebase
+            </div>
+          )}
+
+          { this.state.active1 ? (
+            <div className='homepage__project-filter__python btn active_filter' onClick={() => this.handleFilterProjects(1)}>
+              Python
+            </div>
+          ) : (
+            <div className='homepage__project-filter__python btn' onClick={() => this.handleFilterProjects(1)}>
+              Python
+            </div>
+          )}
         </div>
 
         { projectList }
