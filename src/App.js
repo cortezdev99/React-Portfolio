@@ -7,8 +7,11 @@ import CreateProject from './Components/projects/CreateProject'
 import ProjectDetails from './Components/projects/ProjectDetails';
 import SignIn from './Components/auth/SignIn';
 import About from './Components/layout/About';
+import Contact from './Components/layout/Contact';
+import Icons from "./Components/helpers/icons"
 
 function App() {
+  Icons()
   return (
     <Router>
       <div className="App">
@@ -19,6 +22,7 @@ function App() {
           <Route path='/project/:id' component={ProjectDetails} />
           <Route path='/auth' component={SignIn} />
           <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
         </Switch>
       </div>
     </Router>
