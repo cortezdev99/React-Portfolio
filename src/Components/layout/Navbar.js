@@ -15,7 +15,7 @@ export class Navbar extends Component {
         </div>
 
         <div className="navbar-container__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          I'm looking for opportunities in Full-Stack Development, React-Development, and Front-End Development. I'm also currently diving into React Native as well as Flutter for Mobile Development.
         </div>
 
         <div className="navbar-container__links">
