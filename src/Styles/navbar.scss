@@ -108,6 +108,11 @@
     font-weight: 600;
     background-color: white;
     color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 }
 

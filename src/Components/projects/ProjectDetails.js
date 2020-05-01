@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import DeleteProject from './DeleteProject'
 
@@ -30,13 +31,17 @@ const ProjectDetails = (props) => {
         </div>
 
         <div className='links'>
-          <div className='project-details__link'>
-            {project.websiteLink}
-          </div>
+          <a href={project.websiteLink}>
+            <div className='project-details__link'>
+              <FontAwesomeIcon icon="globe-americas" />Website
+            </div>
+          </a>
 
-          <div className='project-details__link'>
-            {project.githubLink}
-          </div>
+          <a href={project.githubLink}>
+            <div className='project-details__link'>
+              <FontAwesomeIcon icon="code" />Live Code
+            </div>
+          </a>
 
           { auth.uid ? <DeleteProject project={project} id={id} /> : null }
         </div>
