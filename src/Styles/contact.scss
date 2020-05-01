@@ -28,4 +28,55 @@
       border-bottom: 1px solid #CCC;
     }
   }
+
+  &__main-content {
+    width: 100%;
+    height: 45vh;
+
+    display: grid;
+    grid-template-columns: 100px [s] 1fr [e] 100px;
+    grid-template-rows: [email-s] 1fr [email-e phone-s] 1fr [phone-e location-s] 1fr [location-e];
+
+    & > * {
+      grid-column: s/e;
+      font-size: 24px;
+    }
+
+    &__email {
+      grid-row: email-s/email-e;
+    }
+
+    &__phone {
+      grid-row: phone-s/phone-e;
+    }
+
+    &__location {
+      grid-row: location-s/location-e;
+    }
+  }
+
+  &__bullet-points {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__shortan-width {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__bullet-point {
+    padding-left: 40px;
+    align-self: flex-start;
+    width: 258.67px;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
 }

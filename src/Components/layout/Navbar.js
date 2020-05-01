@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import SignedOutLinks from '../auth/SignedOutLinks'
 import image from '../../images/headshotImages/newheadshot.jpg'
@@ -24,11 +25,11 @@ export class Navbar extends Component {
 
         <div className="navbar-container__quick-links">
           <a className="navbar-container__link" href="https://github.com/Macattack1999-teck">
-            Github
+            <FontAwesomeIcon icon={["fab", "github"]} />
           </a>
 
           <a className="navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
-            Linked In
+            <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
           </a>
 
           <a className="navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
