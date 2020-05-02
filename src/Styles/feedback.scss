@@ -88,3 +88,27 @@
     font-size: 24px;
   }
 }
+
+.dark-feedback-container {
+  background-color: $lightBlack;
+
+  &__header {
+    color: $lightGrey;
+  }
+
+  input {
+    background-color: $lightBlack;
+    
+    &::placeholder {
+      color: $lightGrey;
+    }
+  }
+
+  button {
+    background-color: $lightGrey;
+  }
+
+  form {
+    background-color: $lightBlack;
+  }
+}

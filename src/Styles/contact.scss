@@ -81,4 +81,20 @@
   .icon {
     font-size: 30px;
   }
+
+  .svg-inline--fa.fa-w-18 {
+    width: initial !important;
+  }
+}
+
+.dark-contact-container {
+  background-color: $lightBlack;
+
+  &__header {
+    color: $lightGrey;
+  }
+
+  &__bullet-points {
+    color: $lightGrey;
+  }
 }
