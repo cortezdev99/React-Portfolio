@@ -17,6 +17,8 @@
   &__header {
     margin-top: 4rem;
     width: 100%;
+    font-size: 18px;
+    font-weight: 600;
 
     display: grid;
     grid-template-columns: 100px [s] 1fr [e] 100px;

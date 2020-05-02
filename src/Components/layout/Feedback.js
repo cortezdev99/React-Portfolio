@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { createFeedback } from '../../store/actions/feedbackActions'
+import bannerImage from '../../images/feedbackImages/bannerImage4.jpg'
 
 class Feedback extends Component {
   constructor() {
@@ -28,23 +29,32 @@ class Feedback extends Component {
     const { sent, err } = this.props
     return (
       <div className="feedback-container">
+
+        <div className='feedback-container__banner-image' style={{backgroundImage: "url(" + bannerImage + ")"}} />
+
+        <div className='feedback-container__header'>
+          <div className='line'>What do you like/dislike about my portfolio? <br /> Leave feedback!</div>
+        </div>
+
         { sent ? (
           "Thank You!"
         ) : (
           <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              id="title"
-              placeholder="Title"
-              onChange={this.handleChange}
-            />
+            <div className='feedback-container__inputs'>
+              <input
+                type="text"
+                id="title"
+                placeholder="Title"
+                onChange={this.handleChange}
+              />
 
-            <input
-              type="text"
-              id="reason"
-              placeholder="Reason"
-              onChange={this.handleChange}
-            />
+              <input
+                type="text"
+                id="reason"
+                placeholder="Reason"
+                onChange={this.handleChange}
+              />
+            </div>
 
             <div className="feedback-container__button">
               <button>Submit</button>
