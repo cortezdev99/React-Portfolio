@@ -128,10 +128,7 @@
   width: 40px;
   height: 40px;
   transition: 0.9ms;
-
-  &:hover {
-    transform: rotate(180deg);
-  }
+  cursor: pointer;
 }
 
 .fa-toggle-off {
@@ -145,12 +142,41 @@
 }
 
 .dark-navbar-container {
-  background-color: $lightBlack;
+  background-color: $darkGrey;
 
   .dark-signed-in-links, .dark-signed-out-links {
 
     a {
-      color: $white !important;
+      color: $lightGrey !important;
+
+      &:hover {
+        border-bottom: 1px solid $lightGrey;
+      }
+    }
+
+    .active {
+      border-bottom: 1px solid $lightGrey;
     }
   }
+
+  &__description {
+    color: $lightGrey;
+    font-weight: 600;
+  }
+
+  &__link {
+    border: 1px solid $lightGrey;
+    background-color: $lightGrey;
+    color: $lightBlack;
+
+    &:hover {
+      background-color: $lightBlack;
+      color: $lightGrey;
+    }
+  }
+}
+
+.dark-dark-mode-toggle {
+  transform: rotate(180deg);
+  color: $lightGrey;
 }

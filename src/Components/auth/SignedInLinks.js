@@ -6,25 +6,55 @@ import { signOut } from '../../store/actions/authActions'
 
 class SignedInLinks extends Component {
   render() {
-    return (
-      <div className='signed-in-links'>
-        <div className='signed-in-links__link'>
-          <NavLink exact to='/'>Homepage</NavLink>
-        </div>
+    const { darkmode } = this.props
 
-        <div className='signed-in-links__link'>
-          <NavLink exact to='/recieved'>Recieved Feedback</NavLink>
+    if (!darkmode) {
+      return (
+        <div className='signed-in-links'>
+          <div className='signed-in-links__link'>
+            <NavLink exact to='/'>Homepage</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link'>
+            <NavLink exact to='/recieved'>Recieved Feedback</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link'>
+            <NavLink exact to='/create'>Create Project</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link'>
+            <Link onClick={() => this.props.signOut()} to='/' >Logout</Link>
+          </div>
         </div>
+      )
+    } else {
+      return (
+        <div className='signed-in-links dark-signed-in-links'>
+          <div className='signed-in-links__link dark-signed-in-links__link'>
+            <NavLink exact to='/'>Homepage</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link dark-signed-in-links__link'>
+            <NavLink exact to='/recieved'>Recieved Feedback</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link dark-signed-in-links__link'>
+            <NavLink exact to='/create'>Create Project</NavLink>
+          </div>
+  
+          <div className='signed-in-links__link dark-signed-in-links__link'>
+            <Link onClick={() => this.props.signOut()} to='/' >Logout</Link>
+          </div>
+        </div>
+      )
+    }
+  }
+}
 
-        <div className='signed-in-links__link'>
-          <NavLink exact to='/create'>Create Project</NavLink>
-        </div>
-
-        <div className='signed-in-links__link'>
-          <Link onClick={() => this.props.signOut()} to='/' >Logout</Link>
-        </div>
-      </div>
-    )
+const mapStateToProps = (state) => {
+  return {
+    darkmode: state.darkmode.darkmode
   }
 }
 
@@ -34,4 +64,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignedInLinks)
+export default connect(mapStateToProps, mapDispatchToProps)(SignedInLinks)

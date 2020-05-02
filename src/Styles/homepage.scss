@@ -4,6 +4,7 @@
 
   .shader {
     background: linear-gradient(to bottom, rgba(0,0,0,0.77) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
   }
@@ -166,5 +167,30 @@
     z-index: 4;
     position: relative;
     top: 20%;
+  }
+}
+
+.dark-homepage {
+  background-color: $lightBlack;
+
+  &__heading {
+    color: $lightGrey;
+  }
+
+  &__text {
+    color: $lightGrey !important;
+  }
+    
+  &__text__2 {
+    color: $lightGrey !important;
+  }
+
+  &__project-filter {
+    color: $darkGrey;
+    background-color: $darkmodeBlue;
+  }
+
+  .dark-active_filter {
+    background-color: $darkBlue;
   }
 }
