@@ -104,3 +104,8 @@
     align-items: center;
   }
 }
+
+.dark-project-summary__back {
+  background-color: $darkGray !important;
+  color: $lightGrey;
+}

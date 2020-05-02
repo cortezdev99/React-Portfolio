@@ -61,3 +61,20 @@
     font-weight: 600;
   }
 }
+
+.dark-about-container {
+  background-color: $lightBlack;
+
+  &__header {
+    color: $lightGrey;
+  }
+
+  &__main-content {
+    background-color: $lightBlack;
+  }
+
+  &__content {
+    color: $lightGrey;
+    background-color: $lightBlack;
+  }
+}

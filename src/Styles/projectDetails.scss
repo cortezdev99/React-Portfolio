@@ -108,3 +108,22 @@
     font-weight: 600;
   }
 }
+
+.dark-project-details {
+  &__container {
+    background-color: $lightBlack;
+  }
+
+  &__title {
+    color: $lightGrey !important;
+  }
+
+  &__content {
+    color: $lightGrey !important;
+  }
+
+  &__link {
+    color: $lightGrey !important;
+    border: 1px solid $lightGrey;
+  }
+}
