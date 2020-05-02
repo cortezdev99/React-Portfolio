@@ -18,12 +18,12 @@
       font-size: 25px;
       width: 25em;
       border: 1px solid transparent;
-      border-bottom: 1px solid #CCCCCC;
-      color: black;
-      background-color: #fff;
+      border-bottom: 1px solid $lightGrey;
+      color: $darkBlack;
+      background-color: $white;
 
       &::placeholder {
-        color: black;
+        color: $darkBlack;
       }
 
       &:focus {

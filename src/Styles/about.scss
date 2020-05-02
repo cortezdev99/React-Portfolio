@@ -47,7 +47,7 @@
       text-align: center;
       padding-bottom: 1rem;
       grid-column: s/e;
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid $lightGrey;
     }
   }
 
@@ -57,7 +57,7 @@
     width: calc(60% - 60px);
     text-align: center;
     font-size: 18px;
-    color: #1d1d1d;
+    color: $darkBlack;
     font-weight: 600;
   }
 }

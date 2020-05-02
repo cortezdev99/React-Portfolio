@@ -20,12 +20,12 @@
         font-size: 25px;
         width: 25em;
         border: 1px solid transparent;
-        border-bottom: 1px solid #CCCCCC;
-        color: black;
-        background-color: #fff;
+        border-bottom: 1px solid $lightGrey;
+        color: $lightBlack;
+        background-color: $white;
     
         &::placeholder {
-          color: black;
+          color: $lightBlack;
         }
     
         &:focus {
@@ -54,7 +54,7 @@
       width: 80px;
       height: 30px;
       border-radius: 10px;
-      border: 1px solid black;
+      border: 1px solid $darkBlack;
       font-weight: 600;
       font-size: 14px;
     }

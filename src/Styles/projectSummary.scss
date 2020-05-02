@@ -34,7 +34,7 @@
 
   &:hover &__back {
     transform: rotateY(0deg);
-    background-color: #e9e9e9;
+    background-color: $darkWhite;
   }
 }
 
@@ -86,7 +86,7 @@
     width: 80%;
     height: 60%;
     font-size: 22px;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid $lightGrey;
     
     display: flex;
     justify-content: center;

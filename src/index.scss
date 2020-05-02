@@ -10,6 +10,7 @@ body {
   grid-template-columns: 382.19px  1fr
 }
 
+@import './Styles/variables.scss';
 @import './Styles/navbar.scss';
 @import './Styles/homepage.scss';
 @import './Styles/projectDashboard.scss';

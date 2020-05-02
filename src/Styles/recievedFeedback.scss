@@ -1,6 +1,5 @@
 .recievedFeedback-container {
   margin-left: 478.75px;
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,28 +19,29 @@
       text-align: center;
       padding-bottom: 1rem;
       grid-column: s/e;
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid $lightGrey;
     }
   }
 }
 
 .feedbackList-container {
   width: 80%;
+  height: 40vh;
 }
 
 .summaryFeedback-container {
+    text-align: center;
     margin-top: 2rem;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid $darkBlack;
     margin-bottom: 2rem;
 
     &__title {
       width: 100%;
-      // height: 50%;
+      margin-bottom: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,7 +50,6 @@
 
     &__reason {
       width: 100%;
-      // height: 50%;
       display: flex;
       justify-content: center;
       align-items: center;

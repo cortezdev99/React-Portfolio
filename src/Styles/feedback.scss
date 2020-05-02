@@ -27,7 +27,7 @@
       text-align: center;
       padding-bottom: 1rem;
       grid-column: s/e;
-      border-bottom: 1px solid #CCC;
+      border-bottom: 1px solid $lightGrey;
     }
   }
 
@@ -47,12 +47,12 @@
     width: 25em;
     margin-bottom: 2rem;
     border: 1px solid transparent;
-    border-bottom: 1px solid #CCCCCC;
-    color: black;
-    background-color: #fff;
+    border-bottom: 1px solid $lightGrey;
+    color: $darkBlack;
+    background-color: $white;
 
     &::placeholder {
-      color: black;
+      color: $darkBlack;
     }
 
     &:focus {
@@ -68,7 +68,7 @@
     width: 80px;
     height: 40px;
     border-radius: 5px;
-    color: #1d1d1d;
+    color: $darkBlack;
     font-weight: 600;
     transition: 0.3s ease;
 
