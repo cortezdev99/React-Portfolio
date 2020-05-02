@@ -13,11 +13,7 @@ class SignedInLinks extends Component {
         </div>
 
         <div className='signed-in-links__link'>
-          <NavLink exact to='/about'>About</NavLink>
-        </div>
-
-        <div className='signed-in-links__link'>
-          <NavLink exact to='/contact'>Contact</NavLink>
+          <NavLink exact to='/recieved'>Recieved Feedback</NavLink>
         </div>
 
         <div className='signed-in-links__link'>

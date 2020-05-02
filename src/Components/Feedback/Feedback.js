@@ -37,7 +37,7 @@ class Feedback extends Component {
         </div>
 
         { sent ? (
-          "Thank You!"
+          <div className='feedback-container__submitted'><div className='thanks'>Thank You!</div></div>
         ) : (
           <form onSubmit={this.handleSubmit}>
             <div className='feedback-container__inputs'>
