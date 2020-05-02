@@ -16,6 +16,10 @@ export class SignedOutLinks extends Component {
         <div className='signed-out-links__link'>
           <NavLink exact to='/contact'>Contact</NavLink>
         </div>
+
+        <div className='signed-out-links__link'>
+          <NavLink exact to='/feedback'>Feedback</NavLink>
+        </div>
       </div>
     )
   }

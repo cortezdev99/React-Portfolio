@@ -9,6 +9,7 @@ import SignIn from './Components/auth/SignIn';
 import About from './Components/layout/About';
 import Contact from './Components/layout/Contact';
 import Icons from "./Components/helpers/icons"
+import Feedback from './Components/layout/Feedback';
 
 function App() {
   Icons()
@@ -23,6 +24,7 @@ function App() {
           <Route path='/auth' component={SignIn} />
           <Route path='/about' component={About} />
           <Route path='/contact' component={Contact} />
+          <Route path='/feedback' component={Feedback} />
         </Switch>
       </div>
     </Router>
