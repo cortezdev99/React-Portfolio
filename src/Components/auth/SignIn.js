@@ -27,42 +27,69 @@ class SignIn extends Component {
   }
 
   render() {
-    const { authError, auth } = this.props
+    const { authError, auth, darkmode } = this.props
 
     if (auth.uid) {
       return <Redirect to='/' />
     }
 
-    return (
-      <div className='sign-in__container'>
-
-        <div className="sign-in__image" style={{backgroundImage: "url(" + image + ")"}} />
-
-        <form onSubmit={this.handleSubmit}>
-          <div className='sign-in__inputs'>
-            <div className='sign-in__input'>
-              <input type='email' placeholder='Email' id='email' onChange={this.handleChange} />
+    if (!darkmode) {
+      return (
+        <div className='sign-in__container'>
+  
+          <div className="sign-in__image" style={{backgroundImage: "url(" + image + ")"}} />
+  
+          <form onSubmit={this.handleSubmit}>
+            <div className='sign-in__inputs'>
+              <div className='sign-in__input'>
+                <input type='email' placeholder='Email' id='email' onChange={this.handleChange} />
+              </div>
+  
+              <div className='sign-in__input'>
+                <input type='password' placeholder='Password' id='password' onChange={this.handleChange} />
+              </div>
             </div>
-
-            <div className='sign-in__input'>
-              <input type='password' placeholder='Password' id='password' onChange={this.handleChange} />
+  
+            <div className='sign-in__button'>
+              <button>Sign In!</button>
+              { authError ? <div className='error'>{authError}</div> : null }
             </div>
-          </div>
-
-          <div className='sign-in__button'>
-            <button>Sign In!</button>
-            { authError ? <div className='error'>{authError}</div> : null }
-          </div>
-        </form>
-      </div>
-    )
+          </form>
+        </div>
+      )
+    } else {
+      return (
+        <div className='sign-in__container dark-sign-in__container'>
+  
+          <div className="sign-in__image" style={{backgroundImage: "url(" + image + ")"}} />
+  
+          <form onSubmit={this.handleSubmit}>
+            <div className='sign-in__inputs dark-sign-in__inputs'>
+              <div className='sign-in__input dark-sign-in__input'>
+                <input type='email' placeholder='Email' id='email' onChange={this.handleChange} />
+              </div>
+  
+              <div className='sign-in__input'>
+                <input type='password' placeholder='Password' id='password' onChange={this.handleChange} />
+              </div>
+            </div>
+  
+            <div className='sign-in__button dark-sign-in__button'>
+              <button>Sign In!</button>
+              { authError ? <div className='error'>{authError}</div> : null }
+            </div>
+          </form>
+        </div>
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
     authError: state.auth.authError,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    darkmode: state.darkmode.darkmode
   }
 }
 

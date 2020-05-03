@@ -179,84 +179,156 @@ class CreateProject extends Component {
   }
 
   render() {
-    const { auth } = this.props;
+    const { auth, darkmode } = this.props;
     if (!auth.uid) {
       return <Redirect to='/sign-in' />
     }
 
-    return (
-      <div className='create-project__container'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='create-project__input'>
-            <input type='text' id='title' placeholder='Title' onChange={this.handleChange} />
-          </div>
+    if (!darkmode) {
 
-          <div className='create-project__input'>
-            <input type='text' id='shortContent' placeholder='Short Description' onChange={this.handleChange} />
-          </div>
-
-          <div className='create-project__input'>
-            <input type='text' id='content' placeholder='Content' onChange={this.handleChange} />
-          </div>
-
-          <div className='create-project__input'>
-            <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
-          </div>
-
-          <div className='create-project__input'>
-            <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
-          </div>
-
-          <div className='create-project__input'>
-            <select
-              id="belongsTo"
-              onChange={this.handleBelongsToChange}
-            >
-              <option value="0, 1">Python</option>
-              <option value="0, 2">React</option>
-              <option value="0, 3">Firebase</option>
-              <option value="0, 1, 2">Python and React</option>
-              <option value="0, 1, 3">Python and Firebase</option>
-              <option value="0, 2, 3">React and Firebase</option>
-            </select>
-          </div>
-
-          <div className='create-project__input'>
-            <input type='file' id='backgroundImage' ref={this.fileInput} placeholder='Upload Background Image' onChange={this.handleChange} />
-          </div>
-
-          <div className="progress">
-              <progress value={this.state.progressBackground} max="100" />
-          </div>
-
-          <div className='create-project__input'>
-            <input type='file' id='logoImage' ref={this.fileInputTwo} placeholder='Upload Logo Image' onChange={this.handleChange} />
-          </div>
-
-          <div className="progress">
-              <progress value={this.state.progressLogo} max="100" />
-          </div>
-
-          <div className='create-project__input'>
-            <input type='file' id='bannerImage' ref={this.fileInputThree} placeholder='Upload Banner Image' onChange={this.handleChange} />
-          </div>
-
-          <div className="progress">
-              <progress value={this.state.progressBanner} max="100" />
-          </div>
-
-          <div className='create-project__button'>
-            <button>Create Project</button>
-          </div>
-        </form>
-      </div>
-    )
+      return (
+        <div className='create-project__container'>
+          <form onSubmit={this.handleSubmit}>
+            <div className='create-project__input'>
+              <input type='text' id='title' placeholder='Title' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='shortContent' placeholder='Short Description' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='content' placeholder='Content' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <select
+                id="belongsTo"
+                onChange={this.handleBelongsToChange}
+              >
+                <option value="0, 1">Python</option>
+                <option value="0, 2">React</option>
+                <option value="0, 3">Firebase</option>
+                <option value="0, 1, 2">Python and React</option>
+                <option value="0, 1, 3">Python and Firebase</option>
+                <option value="0, 2, 3">React and Firebase</option>
+              </select>
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='backgroundImage' ref={this.fileInput} placeholder='Upload Background Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressBackground} max="100" />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='logoImage' ref={this.fileInputTwo} placeholder='Upload Logo Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressLogo} max="100" />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='bannerImage' ref={this.fileInputThree} placeholder='Upload Banner Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressBanner} max="100" />
+            </div>
+  
+            <div className='create-project__button'>
+              <button>Create Project</button>
+            </div>
+          </form>
+        </div>
+      )
+    } else {
+      return (
+        <div className='create-project__container dark-create-project__container'>
+          <form onSubmit={this.handleSubmit}>
+            <div className='create-project__input'>
+              <input type='text' id='title' placeholder='Title' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='shortContent' placeholder='Short Description' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='content' placeholder='Content' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
+            </div>
+  
+            <div className='create-project__input'>
+              <select
+                id="belongsTo"
+                onChange={this.handleBelongsToChange}
+              >
+                <option value="0, 1">Python</option>
+                <option value="0, 2">React</option>
+                <option value="0, 3">Firebase</option>
+                <option value="0, 1, 2">Python and React</option>
+                <option value="0, 1, 3">Python and Firebase</option>
+                <option value="0, 2, 3">React and Firebase</option>
+              </select>
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='backgroundImage' ref={this.fileInput} placeholder='Upload Background Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressBackground} max="100" />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='logoImage' ref={this.fileInputTwo} placeholder='Upload Logo Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressLogo} max="100" />
+            </div>
+  
+            <div className='create-project__input'>
+              <input type='file' id='bannerImage' ref={this.fileInputThree} placeholder='Upload Banner Image' onChange={this.handleChange} />
+            </div>
+  
+            <div className="progress">
+                <progress value={this.state.progressBanner} max="100" />
+            </div>
+  
+            <div className='create-project__button'>
+              <button>Create Project</button>
+            </div>
+          </form>
+        </div>
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    darkmode: state.darkmode.darkmode
   }
 }
 

@@ -60,3 +60,24 @@
     }
   }
 }
+
+.dark-sign-in {
+  &__container {
+    background-color: $lightBlack;
+  }
+
+  &__inputs {
+    input {
+      background: $lightBlack !important;
+      color: $lightGrey !important;
+  
+      &::placeholder {
+        color: $lightGrey !important;
+      }
+    }
+  }
+
+  button {
+    background-color: $lightGrey;
+  }
+}

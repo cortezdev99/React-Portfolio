@@ -42,3 +42,20 @@
     width: 25em;
   }
 }
+
+.dark-create-project__container {
+  background-color: $lightBlack;
+
+  input {
+    color: $lightGrey;
+    background-color: $lightBlack;
+
+    &::placeholder {
+      color: $lightGrey;
+    }
+  }
+
+  button {
+    background-color: $lightGrey;
+  }
+}

@@ -39,8 +39,9 @@ export class Navbar extends Component {
               Resume
             </a>
   
-            <div className='dark-mode-toggle' onClick={() => darkmodeToggle()}>
-              <FontAwesomeIcon icon='toggle-off' />
+            <div className='dark-mode-toggle'>
+              <div className='dark-mode-title'>Darkmode Off</div>
+              <FontAwesomeIcon icon='toggle-off' className='dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
             </div>
           </div>
         </div>
@@ -73,8 +74,9 @@ export class Navbar extends Component {
               Resume
             </a>
   
-            <div className='dark-mode-toggle dark-dark-mode-toggle' onClick={() => darkmodeToggle()}>
-              <FontAwesomeIcon icon='toggle-off' />
+            <div className='dark-mode-toggle dark-dark-mode-toggle'>
+              <div className='dark-dark-mode-title'>Darkmode On</div>
+              <FontAwesomeIcon icon='toggle-off' className='dark-dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
             </div>
           </div>
         </div>
