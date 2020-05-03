@@ -9,11 +9,17 @@ import { darkmodeToggle } from '../../store/actions/darkmodeActions'
 
 export class Navbar extends Component {
   render() {
-    const { auth, darkmodeToggle, darkmode } = this.props
-    console.log(darkmode)
+    const { auth, darkmodeToggle, darkmode, showNav } = this.props
+
+    var element = document.getElementById("navbar-container")
+
+    if (showNav) {
+      element.classList.toggle("show-nav")
+    }
+
     if (!darkmode) {
       return (
-        <div className='navbar-container'>
+        <div className='navbar-container' id='navbar-container'>
           <div className="navbar-container__image">
             <img src={image} alt="headshot"/>
           </div>
@@ -48,7 +54,7 @@ export class Navbar extends Component {
       )
     } else {
       return (
-        <div className='navbar-container dark-navbar-container'>
+        <div className='navbar-container dark-navbar-container' id='navbar-container'>
           <div className="navbar-container__image dark-navbar-container__image">
             <img src={image} alt="headshot"/>
           </div>
@@ -86,10 +92,11 @@ export class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     auth: state.firebase.auth,
-    darkmode: state.darkmode.darkmode
-
+    darkmode: state.darkmode.darkmode,
+    showNav: state.showNav.showNav
   }
 }
 

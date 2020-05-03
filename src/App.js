@@ -11,6 +11,7 @@ import Contact from './Components/layout/Contact';
 import Icons from "./Components/helpers/icons"
 import Feedback from './Components/Feedback/Feedback';
 import RecievedFeedback from './Components/Feedback/RecievedFeedback'
+import Hamburger from './Components/layout/Hamburger';
 
 function App() {
   Icons()
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        <Hamburger />
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route path='/create' component={CreateProject} />
