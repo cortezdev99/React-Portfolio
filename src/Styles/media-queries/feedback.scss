@@ -1,0 +1,13 @@
+@media (max-width: 1024px) {
+  .feedback-container {
+    margin: 0px;
+  }
+
+  .feedback-container__inputs {
+    width: 30em !important;
+  }
+
+  input {
+    width: 100% !important;
+  }
+}

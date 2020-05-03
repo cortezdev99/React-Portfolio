@@ -3,3 +3,13 @@
     visibility: visible;
   }
 }
+
+@media (max-width: 375px) {
+  .hamburger-container {
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    top: 105px;
+    right: 27px;
+  }
+}

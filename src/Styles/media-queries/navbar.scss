@@ -12,5 +12,66 @@
 
   .show-nav {
     display: flex;
+    z-index: 10;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar-container {
+    width: 80%;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid transparent;
+
+    &__image {
+      width: initial !important;
+      padding: 0px 0px 16px 0px;
+      height: 231px;
+
+      img {
+        width: 101%;
+        border-radius: 0px !important;
+        border-top-right-radius: 30px !important;
+      }
+    }
+
+    &__description {
+      width: initial;
+      font-size: 14px;
+    }
+
+    .signed-out-links, .signed-in-links {
+      &__link {
+        font-size: 15px;
+      }
+    }
+
+    &__quick-links {
+      height: 50px;
+      margin-bottom: 18px;
+    }
+
+    &__link {
+      width: 50px;
+      font-size: 14px;
+    }
+  }
+
+  .svg-inline--fa.fa-w-16 {
+    width: .85em;
+  }
+
+  .dark-mode-title {
+    font-size: 12px;
+  }
+
+  .dark-mode-toggle {
+    width: 50px;
+    height: 81px;
+  }
+
+  .dark-dark-mode-title {
+    font-size: 11px;
   }
 }

@@ -1,0 +1,29 @@
+@media (max-width: 1024px) {
+  .homepage__projects {
+    .project-list__container {
+      a {
+        height: 25vh;
+      }
+    }
+  }
+  
+  .project-details__container {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .project-list__container {
+    grid-template-columns: 1fr;
+
+    a {
+      height: 35vh !important;
+    }
+  }
+
+  .project-details__logo {
+    img {
+      width: 45%;
+    }
+  }
+}

@@ -3,3 +3,15 @@
     margin: 0px;
   }
 }
+
+@media (max-width: 375px) {
+  .homepage__text, .homepage__text__2 {
+    font-size: 18px !important;
+  }
+
+  .homepage__heading {
+    div {
+      font-size: 16px !important;
+    }
+  }
+}

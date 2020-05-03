@@ -1,0 +1,15 @@
+@media (max-width: 1024px) {
+  .about-container {
+    margin: 0px;
+  }
+
+  .about-container__main-content {
+    height: 59vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container__main-content {
+    height: 49%;
+  }
+}
