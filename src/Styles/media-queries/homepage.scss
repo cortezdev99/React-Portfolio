@@ -4,7 +4,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .homepage__text, .homepage__text__2 {
     font-size: 18px !important;
   }
@@ -13,5 +13,27 @@
     div {
       font-size: 16px !important;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .homepage__text, .homepage__text__2 {
+    font-size: 18px !important;
+  }
+  
+  .homepage__heading {
+    div {
+      font-size: 16px !important;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .homepage__text, .homepage__text__2 {
+    font-size: 14px !important;
+  }
+
+  .homepage__heading {
+    grid-template-columns: 50px [s] 1fr [e] 50px;
   }
 }

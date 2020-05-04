@@ -8,6 +8,12 @@
     border-right: 1px solid $lightBlack;
     border-bottom: 1px solid $lightBlack;
     display: none;
+
+    &__image {
+      img {
+        image-rendering: initial;
+      }
+    }
   }
 
   .show-nav {
@@ -18,7 +24,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .navbar-container {
     width: 80%;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
@@ -27,23 +33,24 @@
     &__image {
       width: initial !important;
       padding: 0px 0px 16px 0px;
-      height: 231px;
+      height: 211px;
 
       img {
         width: 101%;
         border-radius: 0px !important;
         border-top-right-radius: 30px !important;
+        image-rendering: initial;
       }
     }
 
     &__description {
       width: initial;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .signed-out-links, .signed-in-links {
       &__link {
-        font-size: 15px;
+        font-size: 12px;
       }
     }
 
@@ -55,6 +62,163 @@
     &__link {
       width: 50px;
       font-size: 14px;
+    }
+  }
+
+  .svg-inline--fa.fa-w-16 {
+    width: .9em;
+  }
+
+  .dark-mode-title {
+    font-size: 12px;
+  }
+
+  .dark-mode-toggle {
+    width: 50px;
+    height: 81px;
+  }
+
+  .dark-dark-mode-title {
+    font-size: 11px;
+  }
+}
+
+
+
+@media (max-width: 411px) {
+  @media (max-height: 823px) {
+    .navbar-container {
+      &__image {
+        height: 247px !important;
+        
+        img {
+          image-rendering: initial;
+        }
+      }
+  
+      &__description {
+        font-size: 13px;
+      }
+      
+      .signed-out-links, .signed-in-links {
+        &__link {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: 731px) {
+  .navbar-container {
+    &__image {
+      height: 233px !important;
+    }
+    
+    .signed-in-links, .signed-out-links {
+      &__link {
+        font-size: 13px;
+        padding-bottom: .96rem;
+      }
+    }
+  }
+}
+
+@media (max-height: 667px) {
+  .navbar-container {
+    &__image {
+      height: 194px !important;
+      
+      img {
+        image-rendering: initial;
+      }
+    }
+    
+    &__description {
+      font-size: 12px;
+    }
+    
+    .signed-in-links, .signed-out-links {
+      padding: 0px;
+      
+      &__link {
+        font-size: 12px;
+      }
+    }
+    
+    &__quick-links {
+      padding-top: 0px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .svg-inline--fa.fa-w-16 {
+    width: .9em;
+  }
+}
+
+@media (max-width: 360px) {
+  @media (max-height: 640px) {
+    .navbar-container {
+      &__image {
+        height: 193px !important;
+      }
+      
+      &__description {
+        margin-bottom: 5px;
+      }
+      
+      &__links {
+        margin-bottom: 10px;
+      }
+      
+      &__quick-links {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  @media (max-height: 667px) {
+    .navbar-container {
+      width: 80%;
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid transparent;
+  
+      &__image {
+        width: initial !important;
+        padding: 0px 0px 16px 0px;
+        height: 204px !important;
+  
+        img {
+          width: 101%;
+          border-radius: 0px !important;
+          border-top-right-radius: 30px !important;
+          image-rendering: initial;
+        }
+      }
+  
+      &__description {
+        width: initial;
+        font-size: 14px;
+      }
+  
+      .signed-out-links, .signed-in-links {
+        &__link {
+          font-size: 15px;
+        }
+      }
+  
+      &__quick-links {
+        height: 50px;
+        margin-bottom: 18px;
+      }
+  
+      &__link {
+        width: 50px;
+        font-size: 14px;
+      }
     }
   }
 
@@ -73,5 +237,38 @@
 
   .dark-dark-mode-title {
     font-size: 11px;
+  }
+}
+
+@media (max-width: 320px) {
+  @media (max-height: 568px) {
+    .navbar-container {
+      &__image {
+        height: 160px !important;
+        margin-top: 10px;
+  
+        img {
+          image-rendering: initial;
+        }
+      }
+  
+      &__description {
+        transform: scale(0.9)
+      }
+  
+      &__links {
+        transform: scale(0.9)
+      }
+  
+      .signed-in-links, .signed-out-links {
+        &__link {
+          padding-bottom: .98rem !important;
+        }
+      }
+  
+      &__quick-links {
+        transform: scale(0.6);
+      }
+    }
   }
 }

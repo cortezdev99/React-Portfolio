@@ -3,3 +3,44 @@
     margin: 0px;
   }
 }
+
+@media (max-width: 414px) {
+  .contact-container {
+    &__main-content {
+      grid-template-columns: [s] 1fr [e];
+    }
+
+    &__bullet-point {
+      font-size: 19px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-container {
+    &__main-content {
+      grid-template-columns: [s] 1fr [e];
+    }
+
+    &__bullet-point {
+      font-size: 19px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .contact-container {
+    &__main-content {
+      grid-template-columns: [s] 1fr [e];
+    }
+
+    &__bullet-point {
+      font-size: 13px;
+      width: 157.67px;
+    }
+
+    &__bullet-points {
+      width: 92%;
+    }
+  }
+}

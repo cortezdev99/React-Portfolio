@@ -12,18 +12,50 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .project-list__container {
     grid-template-columns: 1fr;
 
     a {
-      height: 35vh !important;
+      height: 45vh !important;
     }
   }
 
   .project-details__logo {
     img {
       width: 45%;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .project-list__container {
+    grid-template-columns: 1fr;
+
+    a {
+      height: 40vh !important;
+    }
+  }
+
+  .project-details__logo {
+    img {
+      width: 45%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .project-list__container {
+    a {
+      height: 44vh !important;
+    }
+  }
+}
+
+@media (max-height: 667px) {
+.project-list__container {
+    a {
+      height: 44vh !important;
     }
   }
 }

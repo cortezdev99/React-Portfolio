@@ -13,3 +13,55 @@
     height: 49%;
   }
 }
+
+@media (max-width: 414px) {
+  .about-container {
+    &__main-content {
+      height: 100%;
+      flex-direction: column;
+    }
+
+    &__headshot-image {
+      width: 80%;
+      height: 65%;
+      background-position-y: -200px;
+    }
+
+    &__content {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 16px;
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .about-container {
+    &__main-content {
+      height: 100%;
+      flex-direction: column;
+    }
+
+    &__headshot-image {
+      width: 80%;
+      height: 65%;
+      background-position-y: -200px;
+    }
+
+    &__content {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 16px;
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .about-container {
+    &__content {
+      font-size: 12px !important;
+    }
+  }
+}
