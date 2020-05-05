@@ -1,14 +1,55 @@
 .hamburger-container {
   position: fixed;
   font-size: 60px;
-  border: 1px solid #FFF;
+  border: 2px solid black;
+  background-color: #FFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   border-radius: 50px;
   width: 75px;
   height: 75px;
   top: 105px;
   right: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
   visibility: hidden;
+  z-index: 9;
+  
+  .line {
+    position: absolute;
+    font-size: 50px;
+  }
+
+  .top {
+    top: -26px;
+  }
+
+  .middle {
+    top: -20px;
+  }
+
+  .showing-top {
+    width: 100%;
+    transform: rotate(45deg);
+    top: -50px;
+    right: -7px;
+    font-size: 99px;
+  }
+
+  .showing-middle {
+    width: 100%;
+    transform: rotate(-45deg);
+    top: -48px;
+    left: -7px;
+    font-size: 99px;
+  }
+
+  .showing-bottom {
+    width: 100%;
+    transform: rotate(-45deg);
+    top: -48px;
+    left: -7px;
+    font-size: 99px;
+  }
 }

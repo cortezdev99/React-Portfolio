@@ -12,10 +12,19 @@ export class Navbar extends Component {
     const { auth, darkmodeToggle, darkmode, showNav } = this.props
 
     var element = document.getElementById("navbar-container")
+    // var element2 = document.getElementById("navbar-container")
+    // var element2 = document.getElementsByClassName("showNav")
 
+    // showNav ? element.classList.toggle("show-nav") : element.classList.toggle("show-nav")
     if (showNav) {
       element.classList.toggle("show-nav")
+    } else {
+      if (element) {
+        element.classList.toggle("show-nav")
+      }
     }
+    //   element2.classList.toggle("show-nav")
+    // }
 
     if (!darkmode) {
       return (

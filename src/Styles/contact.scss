@@ -90,6 +90,10 @@
 .dark-contact-container {
   background-color: $lightBlack;
 
+  & > * {
+    background-color: $lightBlack;
+  }
+
   &__header {
     color: $lightGrey;
   }
