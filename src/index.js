@@ -38,7 +38,14 @@ const rrfProps = {
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
-  if (!isLoaded(auth)) return <div className='auth-ready__container'><div>Loading...</div></div>;
+  if (!isLoaded(auth)) return (
+    <div className='loading-wrapper'>
+      <div className='loading-gif'><iframe src="https://gifer.com/embed/7VE" /></div>
+      <div className='loading-text'>
+        loading...
+      </div>
+    </div>
+  )
       return children
 }
 
