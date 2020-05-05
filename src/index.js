@@ -40,7 +40,7 @@ function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
   if (!isLoaded(auth)) return (
     <div className='loading-wrapper'>
-      <div className='loading-gif'><iframe src="https://gifer.com/embed/7VE" /></div>
+      <div className='loading-gif' style={{backgroundImage: "url(https://i.gifer.com/IXNp.gif)"}}></div>
       <div className='loading-text'>
         loading...
       </div>

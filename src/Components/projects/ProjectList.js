@@ -9,13 +9,22 @@ const ProjectList = ({projects, filteredProjects}) => {
     <div className="project-list__container">
       {
         filteredProjects === undefined ? (
-          projects && projects.map(project => {
-          return (
-            <Link to={`/project/${project.id}`} key={project.id}>
-              <ProjectSummary project={project} projectId={project.id}/>
-            </Link>
+          projects ? (
+              projects.map(project => {
+              return (
+                <Link to={`/project/${project.id}`} key={project.id}>
+                  <ProjectSummary project={project} projectId={project.id}/>
+                </Link>
+              )
+            })
+          ) : (
+            <div className='loading-wrapper-homepage'>
+              <div className='loading-gif' style={{backgroundImage: "url(https://i.gifer.com/IXNp.gif)"}}></div>
+              <div className='loading-text'>
+                loading...
+              </div>
+            </div>
           )
-        })
         ) : (
           filteredProjects.map(project => {
             index += 1
