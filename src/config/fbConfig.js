@@ -3,6 +3,7 @@ import 'firebase/database'
 import 'firebase/storage'
 import 'firebase/firestore'
 import 'firebase/auth'
+import 'firebase/analytics'
 
 export var firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -17,6 +18,7 @@ export var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 firebase.firestore()
+firebase.analytics()
 export const storage = firebase.storage()
 
 export default firebase;

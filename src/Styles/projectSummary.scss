@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: 1/-1;
   grid-template-columns: 1/-1;
+  text-align: center;
 
   & > * {
     grid-row: 1/-1;

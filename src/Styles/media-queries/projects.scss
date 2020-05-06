@@ -37,9 +37,15 @@
     }
   }
 
-  .project-details__logo {
-    img {
-      width: 45%;
+  .project-details {
+    &__container {
+      height: initial;
+    }
+
+    &__logo {
+      img {
+        width: 45%;
+      }
     }
   }
 }

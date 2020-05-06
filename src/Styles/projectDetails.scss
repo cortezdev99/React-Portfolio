@@ -38,6 +38,7 @@
     color: $darkBlack;
     font-weight: 600;
     grid-column: s/e;
+    text-align: center;
     
 
     display: flex;
@@ -126,4 +127,8 @@
     color: $lightGrey !important;
     border: 1px solid $lightGrey;
   }
+}
+
+.dark-links {
+  background-color: $lightBlack;
 }

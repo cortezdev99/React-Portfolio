@@ -153,6 +153,9 @@
 
     &__links {
       .signed-in-links, .signed-out-links {
+        padding: 0px;
+        padding-top: 1rem;
+        
         &__link {
           font-size: 14px;
           padding-bottom: 1rem;
@@ -162,9 +165,22 @@
 
     &__quick-links {
       padding-top: 0px;
-      transform: scale(0.7);
-      margin-bottom: 17px;
+      height: 50px;
+      margin-top: 10px;
+
+      a {
+        width: 50px;
+        font-size: 12px;
+      }
     }
+  }
+
+  .fa-github {
+    font-size: 53px;
+  }
+
+  .fa-toggle-off {
+    width: 65% !important;
   }
 }
 

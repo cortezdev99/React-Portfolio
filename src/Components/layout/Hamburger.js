@@ -7,20 +7,15 @@ import { showNavToggle } from '../../store/actions/showNavActions'
 class Hamburger extends Component {
   render() {
     const { showNavToggle, showNav, darkmode } = this.props
-    console.log(showNav)
     if (!darkmode) {
       return (
         showNav ? (
           <div className='hamburger-container' onClick={() => showNavToggle()}>
-            <span className='line top showing-top'>-</span>
-            <span className='line middle showing-middle'>-</span>
-            <span className='line bottom showing-bottom'>-</span>
+            <FontAwesomeIcon icon='times' />
           </div>
         ) : (
           <div className='hamburger-container' onClick={() => showNavToggle()}>
-            <span className='line top'>-</span>
-            <span className='line middle'>-</span>
-            <span className='line bottom'>-</span>
+            <FontAwesomeIcon icon="bars" />
           </div>
         )
       )
@@ -28,15 +23,11 @@ class Hamburger extends Component {
       return (
         showNav ? (
           <div className='hamburger-container dark-hamburger-container' onClick={() => showNavToggle()}>
-            <span className='line top showing-top dark-line dark-showing-top'>-</span>
-            <span className='line middle showing-middle dark-line dark-showing-middle'>-</span>
-            <span className='line bottom showing-bottom dark-line dark-showing-bottom'>-</span>
+            <FontAwesomeIcon icon='times' />
           </div>
         ) : (
           <div className='hamburger-container dark-hamburger-container' onClick={() => showNavToggle()}>
-            <span className='line top dark-line'>-</span>
-            <span className='line middle dark-line'>-</span>
-            <span className='line bottom dark-line'>-</span>
+            <FontAwesomeIcon icon="bars" />
           </div>
         )
       )

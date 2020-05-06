@@ -112,4 +112,9 @@
   form {
     background-color: $lightBlack;
   }
+
+  &__submitted {
+    background-color: $lightBlack;
+    color: $lightGrey;
+  }
 }

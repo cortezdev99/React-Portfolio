@@ -1,12 +1,49 @@
 @media (max-width: 1024px) {
   .homepage {
     margin: 0px;
+
+    &__heading {
+      text-align: center;
+    }
+
+    &__image {
+      .image {
+        background-attachment: initial;
+        z-index: -10
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 80%;
+        }
+      }
+
+      @keyframes typewriter2 {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dark-homepage {
+    &__heading {
+      background-color: $lightBlack;
+    }
   }
 }
 
 @media (max-width: 414px) {
   .homepage__text, .homepage__text__2 {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
 
   .homepage__heading {
@@ -18,12 +55,12 @@
 
 @media (max-width: 375px) {
   .homepage__text, .homepage__text__2 {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   
   .homepage__heading {
     div {
-      font-size: 16px !important;
+      font-size: 14px !important;
     }
   }
 }
