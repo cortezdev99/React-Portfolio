@@ -113,11 +113,18 @@
       background-color: $darkBlack;
       color: $white;
     }
+
+    & > * {
+      width: 62px;
+      height: 100%;
+    }
   }
 }
 
 .fa-github {
-  font-size: 62px;
+  font-size: 70px;
+  height: 105%;
+  width: 105%;
 }
 
 .fa-linkedin-in {
@@ -150,7 +157,7 @@
 }
 
 .svg-inline--fa.fa-w-18 {
-  width: 100%;
+  width: 70%;
 }
 
 .dark-navbar-container {
