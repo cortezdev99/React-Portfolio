@@ -94,6 +94,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    
   }
 
   &__link {
@@ -113,18 +115,11 @@
       background-color: $darkBlack;
       color: $white;
     }
-
-    & > * {
-      width: 62px;
-      height: 100%;
-    }
   }
 }
 
 .fa-github {
-  font-size: 70px;
-  height: 105%;
-  width: 105%;
+  font-size: 62px;
 }
 
 .fa-linkedin-in {
@@ -157,7 +152,7 @@
 }
 
 .svg-inline--fa.fa-w-18 {
-  width: 70%;
+  width: 45px;
 }
 
 .dark-navbar-container {
