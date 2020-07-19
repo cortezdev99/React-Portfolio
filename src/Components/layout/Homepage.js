@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 
-import image from '../../images/homepageImages/mountains.jpg'
+// import image from '../../images/homepageImages/mountains.jpg'
+import image from '../../images/homepageImages/forest.png'
 import darkImage from '../../images/homepageImages/darkHomepage.jpg'
 import ProjectList from '../projects/ProjectList'
 import { filterProjects } from '../../store/actions/projectActions'
@@ -79,21 +80,39 @@ class Homepage extends Component {
       )
     )
 
+    function stars() {
+      let scene = document.querySelector('.scene')
+      if (scene !== null) {
+        let count = 500;
+        let i = 0;
+        while (i < count) {
+          let star = document.createElement("i");
+          let x = Math.floor(Math.random() * window.innerWidth);
+          let y = Math.floor(Math.random() * window.innerHeight);
+          let duration = Math.random() * 10;
+          let size = Math.random() * 2;
+  
+          star.style.left = x + 'px';
+          star.style.top = y + 'px';
+          star.style.width = 1 +  size + 'px';
+          star.style.height = 1 +  size + 'px';
+  
+          scene.appendChild(star)
+          i++
+        }
+      }
+      // return null
+    }
+
     if (!darkmode) {
       return (
         <div className='homepage'>
-          <div className="homepage__image">
-            <div className='image'style={{backgroundImage: "url(" + image + ")"}}>
-              <div className='shader'>
-                <div className="homepage__text typewriter-animation">
-                  Hello there, my name's Michael.
-                </div>
-  
-                <div className="homepage__text__2 typewriter-animation__2">
-                  I'm a FullStack Software Developer.
-                </div>
-              </div>
-            </div>
+          <div className='scene' style={{ position: "relative", width: "100%", height: "100vh", background: 'linear-gradient(#111425, #3751e0)', overflow: 'hidden'  }}>
+            <div className='moon' style={{ position: "relative", width: "100px", height: "100px", background: "#fff", borderRadius: "50%", zIndex: 1000, top: "100px", left: "200px" }}></div>
+            <img src={image} className="forest" />
+            {
+              stars()
+            }
           </div>
   
   
