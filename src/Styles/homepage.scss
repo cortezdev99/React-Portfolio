@@ -176,7 +176,8 @@
   background-color: $lightBlack;
 
   &__heading {
-    color: $lightGrey;
+    // color: $lightGrey;
+    color: $darkOrange
   }
 
   &__text {
@@ -195,25 +196,4 @@
   .dark-active_filter {
     background-color: $darkBlue;
   }
-}
-
-.moon::after {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: 15px;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(#111425, #3751e0);
-  background-attachment: fixed;
-}
-
-.forest {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  transform: scale(1.2)
 }
