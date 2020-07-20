@@ -32,7 +32,19 @@ const ProjectDetails = (props) => {
           </div>
   
           <div className='links'>
-            <a href={project.websiteLink}>
+          <a href={project.websiteLink} className="animated-btn">
+              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
+                <FontAwesomeIcon icon="globe-americas" />Website
+              {/* </div> */}
+            </a>
+  
+            <a href={project.githubLink} className="animated-btn">
+              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
+                <FontAwesomeIcon icon="code" />Live Code
+              {/* </div> */}
+            </a>
+            
+            {/* <a href={project.websiteLink}>
               <div className='project-details__link'>
                 <FontAwesomeIcon icon="globe-americas" />Website
               </div>
@@ -42,7 +54,7 @@ const ProjectDetails = (props) => {
               <div className='project-details__link'>
                 <FontAwesomeIcon icon="code" />Live Code
               </div>
-            </a>
+            </a> */}
   
             { auth.uid ? <DeleteProject project={project} id={id} /> : null }
           </div>
@@ -71,18 +83,17 @@ const ProjectDetails = (props) => {
           </div>
   
           <div className='links dark-links'>
-            <a href={project.websiteLink}>
-              <div className='project-details__link dark-project-details__link'>
+            <a href={project.websiteLink} className="animated-btn neon-animated-btn">
+              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
                 <FontAwesomeIcon icon="globe-americas" />Website
-              </div>
+              {/* </div> */}
             </a>
   
-            <a href={project.githubLink}>
-              <div className='project-details__link dark-project-details__link'>
+            <a href={project.githubLink} className="animated-btn neon-animated-btn">
+              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
                 <FontAwesomeIcon icon="code" />Live Code
-              </div>
+              {/* </div> */}
             </a>
-  
             { auth.uid ? <DeleteProject project={project} id={id} /> : null }
           </div>
         </div>

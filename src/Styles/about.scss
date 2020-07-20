@@ -66,7 +66,8 @@
   background-color: $lightBlack;
 
   &__header {
-    color: $lightGrey;
+    // color: $lightGrey;
+    color: $darkOrange;
   }
 
   &__main-content {
@@ -75,6 +76,7 @@
 
   &__content {
     color: $lightGrey;
+    // color: $darkOrange;
     background-color: $lightBlack;
   }
 }
