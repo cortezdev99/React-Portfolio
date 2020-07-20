@@ -60,7 +60,7 @@ class Feedback extends Component {
               </div>
   
               <div className="feedback-container__button">
-                <button>Submit</button>
+                <button className="animated-btn">Submit</button>
                 { err ? <div className='error'>{err}</div> : null}
               </div>
             </form>
@@ -98,7 +98,7 @@ class Feedback extends Component {
               </div>
   
               <div className="feedback-container__button dark-feedback-container__button">
-                <button>Submit</button>
+                <button className="animated-btn neon-animated-btn">Submit</button>
                 { err ? <div className='error'>{err}</div> : null}
               </div>
             </form>
