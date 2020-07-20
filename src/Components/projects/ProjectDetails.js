@@ -32,30 +32,13 @@ const ProjectDetails = (props) => {
           </div>
   
           <div className='links'>
-          <a href={project.websiteLink} className="animated-btn">
-              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
-                <FontAwesomeIcon icon="globe-americas" />Website
-              {/* </div> */}
+            <a href={project.websiteLink} className="animated-btn">
+              <FontAwesomeIcon icon="globe-americas" />Website
             </a>
   
             <a href={project.githubLink} className="animated-btn">
-              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
-                <FontAwesomeIcon icon="code" />Live Code
-              {/* </div> */}
+              <FontAwesomeIcon icon="code" />Live Code
             </a>
-            
-            {/* <a href={project.websiteLink}>
-              <div className='project-details__link'>
-                <FontAwesomeIcon icon="globe-americas" />Website
-              </div>
-            </a>
-  
-            <a href={project.githubLink}>
-              <div className='project-details__link'>
-                <FontAwesomeIcon icon="code" />Live Code
-              </div>
-            </a> */}
-  
             { auth.uid ? <DeleteProject project={project} id={id} /> : null }
           </div>
         </div>
@@ -84,15 +67,11 @@ const ProjectDetails = (props) => {
   
           <div className='links dark-links'>
             <a href={project.websiteLink} className="animated-btn neon-animated-btn">
-              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
-                <FontAwesomeIcon icon="globe-americas" />Website
-              {/* </div> */}
+              <FontAwesomeIcon icon="globe-americas" />Website
             </a>
   
             <a href={project.githubLink} className="animated-btn neon-animated-btn">
-              {/* <div className='project-details__link dark-project-details__link project-details__btn'> */}
-                <FontAwesomeIcon icon="code" />Live Code
-              {/* </div> */}
+              <FontAwesomeIcon icon="code" />Live Code
             </a>
             { auth.uid ? <DeleteProject project={project} id={id} /> : null }
           </div>

@@ -61,18 +61,6 @@
     font-size: 24px;
     font-weight: 550;
   }
-
-  &__link {
-    width: 150px;
-    height: 50px;
-    // border: 1px solid $darkBlack;
-    border-radius: 6px;
-    font-size: 22px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .grid {
@@ -105,7 +93,6 @@
 .links {
   a {
     text-decoration: none;
-    color: $darkBlack;
     font-weight: 600;
   }
 }
@@ -122,11 +109,6 @@
 
   &__content {
     color: $lightGrey !important;
-  }
-
-  &__link {
-    color: $lightGrey !important;
-    border: 1px solid $lightGrey;
   }
 }
 
@@ -149,10 +131,6 @@
 .animated-btn:nth-child(1) {
   filter: hue-rotate(115deg)
 }
-
-// .animated-btn:nth-child(2) {
-//   filter: hue-rotate(115deg)
-// }
 
 .animated-btn:nth-child(3) {
   filter: hue-rotate(270deg)
