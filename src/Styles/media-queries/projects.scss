@@ -65,3 +65,33 @@
     }
   }
 }
+
+@media (min-width: 200px) {
+  @media (max-width: 900px) {
+    .project-details__container {
+      .links {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+
+        a {
+          width: 60%;
+          text-align: center;
+          margin-bottom: 40px;
+        }
+      }
+
+      .grid {
+        grid-template-columns: 10% [s] 1fr [e] 10%;
+      }
+    }
+
+    .project-details__content {
+      padding: 20% 0;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}

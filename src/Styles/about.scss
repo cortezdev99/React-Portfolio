@@ -25,6 +25,7 @@
 
   &__headshot-image {
     height: 100%;
+    min-height: 500px;
     width: 40%;
 
     background-repeat: no-repeat;
@@ -66,7 +67,8 @@
   background-color: $lightBlack;
 
   &__header {
-    color: $lightGrey;
+    // color: $lightGrey;
+    color: $darkOrange;
   }
 
   &__main-content {
@@ -75,6 +77,7 @@
 
   &__content {
     color: $lightGrey;
+    // color: $darkOrange;
     background-color: $lightBlack;
   }
 }

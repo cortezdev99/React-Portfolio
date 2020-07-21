@@ -1,7 +1,7 @@
 .feedback-container {
   margin-left: 478.75px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   &__banner-image {
     width: 100%;
@@ -44,7 +44,11 @@
 
   input {
     font-size: 25px;
-    width: 25em;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 2rem;
     border: 1px solid transparent;
     border-bottom: 1px solid $lightGrey;
@@ -61,20 +65,21 @@
   }
   
   &__inputs {
-    width: 25em !important;
+    width: 80%;
+  }
+
+  &__button {
+    width: 20%;
   }
 
   button {
-    width: 80px;
-    height: 40px;
-    border-radius: 5px;
-    color: $darkBlack;
-    font-weight: 600;
-    transition: 0.3s ease;
-
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     &:focus {
       outline: none;
-      transform: scale(0.95);
     }
   }
 
@@ -93,20 +98,16 @@
   background-color: $lightBlack;
 
   &__header {
-    color: $lightGrey;
+    color: $darkOrange;
   }
 
   input {
     background-color: $lightBlack;
-    color: $lightGrey;
+    color: $darkOrange;
     
     &::placeholder {
-      color: $lightGrey;
+      color: $darkOrange;
     }
-  }
-
-  button {
-    background-color: $lightGrey;
   }
 
   form {
