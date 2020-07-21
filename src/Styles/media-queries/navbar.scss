@@ -73,9 +73,14 @@
         }
       }
 
-      &__quick-links {
+      ul {
         transform: scale(1) !important;
+        padding-bottom: 40px;
       }
+
+      // ul {
+      //   transform: scale(1) !important;
+      // }
     }
   }
 }
@@ -109,12 +114,22 @@
         height: 30%;
         padding-bottom: .5rem;
       }
-  
-      &__quick-links {
-        padding: 5%;
-        transform: scale(0.8);
-        margin-bottom: 10px;
+
+      ul {
+        transform: scale(0.6);
+        // padding-bottom: 40px;
       }
+
+      // ul {
+      //   width: 50px;
+      //   height: 50px;
+      // }
+  
+      // ul {
+      //   padding: 5%;
+      //   transform: scale(0.8);
+      //   margin-bottom: 10px;
+      // }
     }
   }
 }
@@ -137,13 +152,12 @@
       }
     }
 
-    &__quick-links {
-      width: 120%;
-      justify-content: space-evenly;
-    }
+    // ul {
+    //   width: 120%;
+    //   justify-content: space-evenly;
+    // }
   }
 }
-
 
 @media (max-width: 375px) {
   .navbar-container {
@@ -166,28 +180,36 @@
       margin-bottom: 1rem;
     }
 
-    &__quick-links {
-      padding-top: 0px;
-      transform: scale(0.7);
-      height: 50px;
-      margin-top: 10px;
-
-      a {
-        height: 100%;
-        width: 50px;
-        font-size: 12px;
-      }
+    ul {
+      transform: scale(0.4);
     }
+
+    // ul {
+    //   padding-top: 0px;
+    //   transform: scale(0.7);
+    //   height: 50px;
+    //   margin-top: 10px;
+
+    //   a {
+    //     height: 100%;
+    //     width: 50px;
+    //     font-size: 12px;
+    //   }
+    // }
   }
 
-  .fa-github {
-    font-size: 51px;
-    border: 1px solid transparent;
-  }
+//   .fa-github {
+//     font-size: 30px;
+//     border: 1px solid transparent;
+//   }
 
-  .fa-toggle-off {
-    width: 65% !important;
-  }
+//   .fa-toggle-off {
+//     width: 65% !important;
+//   }
+
+//   .fa-linkedin-in {
+//     font-size: 10px !important;
+//   }
 }
 
 @media (max-width: 320px) {
@@ -205,10 +227,24 @@
       }
     }
 
-    &__quick-links {
-      padding-top: 0px;
-      width: 140%;
-      transform: scale(0.6);
+    // ul {
+    //   padding-top: 0px;
+    //   width: 140%;
+    //   transform: scale(0.6);
+    // }
+
+    ul {
+      transform: scale(0.3);
+    }
+  }
+}
+
+@media (min-width: 374px) {
+  @media (max-width: 500px) {
+    .navbar-container {
+      ul {
+        transform: scale(0.5);
+      }
     }
   }
 }
