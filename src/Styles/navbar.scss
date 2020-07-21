@@ -85,37 +85,6 @@
       }
     }
   }
-
-  &__quick-links {
-    padding-top: 1rem;
-    height: 60px;
-    width: 100%;
-    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    
-  }
-
-  &__link {
-    height: 100%;
-    width: 60px;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    text-decoration: none;
-    font-weight: 600;
-    background-color: $white;
-    color: black;
-
-    &:hover {
-      background-color: $darkBlack;
-      color: $white;
-    }
-  }
 }
 
 .fa-github {
@@ -174,7 +143,7 @@
   }
 
   &__description {
-    color: $lightGrey;
+    color: $darkOrange;
     font-weight: 600;
   }
 
@@ -197,4 +166,149 @@
 
 .dark-dark-mode-toggle-toggle {
   transform: rotate(180deg);
+}
+
+ul {
+  height: 80px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  display: flex;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+}
+
+ul li a {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  border-radius: 50%;
+  color: #e2e2e2;
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+ul li .dark-mode-btn {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  border-radius: 50%;
+  color: #e2e2e2;
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+ul li a:hover {
+  color: #999;
+  transform: translateY(-20px);
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 24px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul li .dark-mode-btn:hover {
+  color: #999;
+  transform: translateY(-20px);
+  box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), 2px 24px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul li a:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+ul li .dark-mode-btn:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+ul li:nth-child(1) a:before {
+  background: #fff;
+}
+ul li:nth-child(2) a:before {
+  background: #1877f2;
+}
+ul li:nth-child(3) a:before {
+  background: #25d366;
+}
+
+ul li:nth-child(4) .dark-mode-btn:before {
+  background: #c32aa3;
+}
+
+ul li a .resume {
+  position: relative;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  z-index: 1;
+}
+
+ul li a .github {
+  position: relative;
+  color: #1d2125;
+  z-index: 1;
+}
+
+ul li a .linked-in {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+ul li .dark-mode-btn .dark-mode {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.dark-mode-text {
+  color: #1d2125;
+    position: absolute;
+    bottom: 59px;
+    right: -27px;
+}
+
+.dark-text {
+  color: #CCC;
+  font-weight: 700;
+}
+
+.dark-button {
+  background: #424242 !important;
+  color: #1d2125;
+}
+
+ul li .dark-button:hover {
+  box-shadow: inset -1px -1px 2px rgba(71, 70, 71, 0.4), 2px 24px 10px rgba(71, 70, 71, 0.4);
+}
+
+ul li .dark-button:before {
+  border: 2px solid rgba(0, 0, 0, 0.5);
 }

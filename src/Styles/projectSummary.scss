@@ -108,5 +108,10 @@
 
 .dark-project-summary__back {
   background-color: $darkGray !important;
-  color: $lightGrey;
+  color: #fff;
+
+  .dark-project-summary__title {
+    color: $darkOrange !important;
+    font-weight: 600;
+  }
 }
