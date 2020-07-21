@@ -28,35 +28,12 @@ export class Navbar extends Component {
               { auth.uid ? <SignedInLinks /> : <SignedOutLinks />}
             </div>
 
-            {/* position: absolute;
-            bottom: 90px;
-            right: 6px; */}
-
             <ul>
               <li><a href="https://github.com/Macattack1999-teck"><FontAwesomeIcon className="github" icon={["fab", "github"]} /></a></li>
               <li><a href="https://www.linkedin.com/in/michael-cortez-9634781a1"><FontAwesomeIcon className="linked-in" icon={["fab", "linkedin-in"]} /></a></li>
               <li><a href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn"><div className="dark-mode"><div className="dark-mode-text">Darkmode</div>Off</div></div></li>
             </ul>
-    
-            {/* <div className="navbar-container__quick-links">
-              <a className="navbar-container__link" href="https://github.com/Macattack1999-teck">
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
-    
-              <a className="navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
-                <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-              </a>
-    
-              <a className="navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
-                Resume
-              </a>
-    
-              <div className='dark-mode-toggle'>
-                <div className='dark-mode-title'> Off</div>
-                <FontAwesomeIcon icon='toggle-off' className='dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
-              </div>
-            </div> */}
           </div>
         )
       } else {
@@ -80,25 +57,6 @@ export class Navbar extends Component {
               <li><a href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn"><div className="dark-mode"><div className="dark-mode-text">Darkmode</div>Off</div></div></li>
             </ul>
-    
-            {/* <div className="navbar-container__quick-links">
-              <a className="navbar-container__link" href="https://github.com/Macattack1999-teck">
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
-    
-              <a className="navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
-                <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-              </a>
-    
-              <a className="navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
-                Resume
-              </a>
-    
-              <div className='dark-mode-toggle'>
-                <div className='dark-mode-title'>Darkmode Off</div>
-                <FontAwesomeIcon icon='toggle-off' className='dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
-              </div>
-            </div> */}
           </div>
         )
       }
@@ -124,25 +82,6 @@ export class Navbar extends Component {
               <li><a className="dark-button" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume dark-resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn dark-button"><div className="dark-mode dark-dark-mode"><div className="dark-mode-text dark-text">Darkmode</div>On</div></div></li>
             </ul>
-    
-            {/* <div className="navbar-container__quick-links dark-navbar-container__quick-links">
-              <a className="navbar-container__link dark-navbar-container__link" href="https://github.com/Macattack1999-teck">
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
-    
-              <a className="navbar-container__link dark-navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
-                <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-              </a>
-    
-              <a className="navbar-container__link dark-navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
-                Resume
-              </a>
-    
-              <div className='dark-mode-toggle dark-dark-mode-toggle'>
-                <div className='dark-dark-mode-title'>Darkmode On</div>
-                <FontAwesomeIcon icon='toggle-off' className='dark-dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
-              </div>
-            </div> */}
           </div>
         )
       } else {
@@ -166,26 +105,6 @@ export class Navbar extends Component {
               <li><a className="dark-button" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume dark-resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn dark-button"><div className="dark-mode dark-dark-mode"><div className="dark-mode-text dark-text">Darkmode</div>On</div></div></li>
             </ul>
-
-            {/* <FontAwesomeIcon className="test-toggle, dark-test-toggle" icon='toggle-off'/> */}
-            {/* <div className="navbar-container__quick-links dark-navbar-container__quick-links">
-              <a className="navbar-container__link dark-navbar-container__link" href="https://github.com/Macattack1999-teck">
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
-    
-              <a className="navbar-container__link dark-navbar-container__link" href="https://www.linkedin.com/in/michael-cortez-9634781a1">
-                <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
-              </a>
-    
-              <a className="navbar-container__link dark-navbar-container__link" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing">
-                Resume
-              </a>
-    
-              <div className='dark-mode-toggle dark-dark-mode-toggle'>
-                <div className='dark-dark-mode-title'>Darkmode On</div>
-                <FontAwesomeIcon icon='toggle-off' className='dark-dark-mode-toggle-toggle' onClick={() => darkmodeToggle()}/>
-              </div>
-            </div> */}
           </div>
         )
       }
