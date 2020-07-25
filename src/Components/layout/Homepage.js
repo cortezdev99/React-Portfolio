@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
@@ -7,6 +7,7 @@ import image from '../../images/homepageImages/mountains.jpg'
 import darkImage from '../../images/homepageImages/darkHomepage.jpg'
 import ProjectList from '../projects/ProjectList'
 import { filterProjects } from '../../store/actions/projectActions'
+import ModalContext from '../../Contexts/ModalContext'
 
 class Homepage extends Component {
   constructor() {
@@ -20,9 +21,17 @@ class Homepage extends Component {
     }
   }
 
+  // componentDidMount() {
+  //   const {
+  //     setModalIsOpen,
+  //     setModalContentText
+  //   } = useContext(ModalContext)
+
+  //   setModalIsOpen(true)
+  // }
+
   handleFilterProjects = (_id) => {
     this.props.filterProjects(_id)
-    // console.log(_id)
     
     if (_id === 0) {
       this.setState({
