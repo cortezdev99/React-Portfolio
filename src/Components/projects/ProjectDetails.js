@@ -10,15 +10,12 @@ import ModalContext from '../../Contexts/ModalContext'
 const ProjectDetails = (props) => {
   const { project, auth, id, darkmode } = props;
   const {
-    modalIsOpen,
     setModalIsOpen,
-    modalHeadingText,
-    setModalHeadingText,
-    modalContentText,
     setModalContentText
   } = useContext(ModalContext)
 
   const handleClick = () => {
+    setModalContentText("I am currently working on getting it on the ios appstore. Link will send you nowhere at this time.")
     setModalIsOpen(true)
   }
 
