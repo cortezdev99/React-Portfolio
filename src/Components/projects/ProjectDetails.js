@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import DeleteProject from './DeleteProject'
+import ModalContext from '../../Contexts/ModalContext'
 
 const ProjectDetails = (props) => {
   const { project, auth, id, darkmode } = props;
+  const {
+    modalIsOpen,
+    setModalIsOpen,
+    modalHeadingText,
+    setModalHeadingText,
+    modalContentText,
+    setModalContentText
+  } = useContext(ModalContext)
+
+  const handleClick = () => {
+    setModalIsOpen(true)
+  }
+
   if (project) {
     console.log(project)
     if (!darkmode) {
@@ -50,9 +64,9 @@ const ProjectDetails = (props) => {
                   Google Play Store
                 </a>
 
-                <a className="react-native-link animated-btn" href={project.iosLink}>
+                <button className="react-native-link animated-btn" onClick={handleClick}>
                   Apple App Store
-                </a>
+                </button>
 
                 <a className="react-native-link animated-btn" href={project.expoLink}>
                   Expo
@@ -108,9 +122,9 @@ const ProjectDetails = (props) => {
                   Google Play Store
                 </a>
 
-                <a className="react-native-link animated-btn neon-animated-btn" href={project.iosLink}>
+                <button className="react-native-link animated-btn neon-animated-btn" onClick={handleClick}>
                   Apple App Store
-                </a>
+                </button>
 
                 <a className="react-native-link animated-btn neon-animated-btn" href={project.expoLink}>
                   Expo

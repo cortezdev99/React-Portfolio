@@ -130,4 +130,15 @@
   text-align: center;
   column-gap: 20%;
   row-gap: 40px;
+
+  button {
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
 }
