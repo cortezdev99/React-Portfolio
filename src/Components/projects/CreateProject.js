@@ -15,6 +15,9 @@ class CreateProject extends Component {
       shortContent: '',
       content: '',
       websiteLink: '',
+      iosLink: '',
+      andriodLink: '',
+      expoLink: '',
       urlBackground: '',
       belongsTo: [0],
       githubLink: '',
@@ -204,6 +207,18 @@ class CreateProject extends Component {
             <div className='create-project__input'>
               <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
             </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='iosLink' placeholder='Ios Link' onChange={this.handleChange} />
+            </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='andriodLink' placeholder='Andriod Link' onChange={this.handleChange} />
+            </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='expoLink' placeholder='Expo Link' onChange={this.handleChange} />
+            </div>
   
             <div className='create-project__input'>
               <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
@@ -214,11 +229,10 @@ class CreateProject extends Component {
                 id="belongsTo"
                 onChange={this.handleBelongsToChange}
               >
-                <option value="0, 1">Python</option>
+                <option value="0, 1">React-Native</option>
                 <option value="0, 2">React</option>
                 <option value="0, 3">Firebase</option>
-                <option value="0, 1, 2">Python and React</option>
-                <option value="0, 1, 3">Python and Firebase</option>
+                <option value="0, 1, 3">React-Native and Firebase</option>
                 <option value="0, 2, 3">React and Firebase</option>
               </select>
             </div>
@@ -272,6 +286,18 @@ class CreateProject extends Component {
             <div className='create-project__input'>
               <input type='text' id='websiteLink' placeholder='Website Link' onChange={this.handleChange} />
             </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='iosLink' placeholder='Ios Link' onChange={this.handleChange} />
+            </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='andriodLink' placeholder='Andriod Link' onChange={this.handleChange} />
+            </div>
+
+            <div className='create-project__input'>
+              <input type='text' id='expoLink' placeholder='Expo Link' onChange={this.handleChange} />
+            </div>
   
             <div className='create-project__input'>
               <input type='text' id='githubLink' placeholder='Github Link' onChange={this.handleChange} />
@@ -282,11 +308,10 @@ class CreateProject extends Component {
                 id="belongsTo"
                 onChange={this.handleBelongsToChange}
               >
-                <option value="0, 1">Python</option>
+                <option value="0, 1">React-Native</option>
                 <option value="0, 2">React</option>
                 <option value="0, 3">Firebase</option>
-                <option value="0, 1, 2">Python and React</option>
-                <option value="0, 1, 3">Python and Firebase</option>
+                <option value="0, 1, 3">React-Native and Firebase</option>
                 <option value="0, 2, 3">React and Firebase</option>
               </select>
             </div>

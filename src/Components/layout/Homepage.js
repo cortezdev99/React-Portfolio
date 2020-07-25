@@ -22,7 +22,7 @@ class Homepage extends Component {
 
   handleFilterProjects = (_id) => {
     this.props.filterProjects(_id)
-    console.log(_id)
+    // console.log(_id)
     
     if (_id === 0) {
       this.setState({
@@ -122,6 +122,16 @@ class Homepage extends Component {
               </div>
             )}
             
+            { this.state.active1 ? (
+              <div className='homepage__project-filter__react-native btn active_filter' onClick={() => this.handleFilterProjects(1)}>
+                React-Native
+              </div>
+            ) : (
+              <div className='homepage__project-filter__react-native btn' onClick={() => this.handleFilterProjects(1)}>
+                React-Native
+              </div>
+            )}
+
             { this.state.active3 ? (
               <div className='homepage__project-filter__firebase btn active_filter' onClick={() => this.handleFilterProjects(3)}>
                 Firebase
@@ -129,16 +139,6 @@ class Homepage extends Component {
             ) : (
               <div className='homepage__project-filter__firebase btn' onClick={() => this.handleFilterProjects(3)}>
                 Firebase
-              </div>
-            )}
-  
-            { this.state.active1 ? (
-              <div className='homepage__project-filter__python btn active_filter' onClick={() => this.handleFilterProjects(1)}>
-                Python
-              </div>
-            ) : (
-              <div className='homepage__project-filter__python btn' onClick={() => this.handleFilterProjects(1)}>
-                Python
               </div>
             )}
           </div>
