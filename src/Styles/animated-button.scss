@@ -18,6 +18,10 @@
   filter: hue-rotate(270deg)
 }
 
+.animated-btn:nth-child(4) {
+  filter: hue-rotate(115deg)
+}
+
 .animated-btn:hover {
   background: #1d2521;
   color: #fff !important;

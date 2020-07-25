@@ -9,6 +9,7 @@ import DeleteProject from './DeleteProject'
 const ProjectDetails = (props) => {
   const { project, auth, id, darkmode } = props;
   if (project) {
+    console.log(project)
     if (!darkmode) {
       return (
         <div className='project-details__container'>
@@ -30,17 +31,41 @@ const ProjectDetails = (props) => {
           <div className='project-details__content'>
             {project.content}
           </div>
-  
-          <div className='links'>
-            <a href={project.websiteLink} className="animated-btn">
-              <FontAwesomeIcon icon="globe-americas" />Website
-            </a>
-  
-            <a href={project.githubLink} className="animated-btn">
-              <FontAwesomeIcon icon="code" />Live Code
-            </a>
-            { auth.uid ? <DeleteProject project={project} id={id} /> : null }
-          </div>
+
+          {
+            project.websiteLink ? (
+              <div className='links'>
+                <a href={project.websiteLink} className="animated-btn">
+                  <FontAwesomeIcon icon="globe-americas" />Website
+                </a>
+      
+                <a href={project.githubLink} className="animated-btn">
+                  <FontAwesomeIcon icon="code" />Live Code
+                </a>
+                { auth.uid ? <DeleteProject project={project} id={id} /> : null }
+              </div>
+            ) : (
+              <div className="links react-native-links">
+                <a className="react-native-link animated-btn" href={project.andriodLink}>
+                  Google Play Store
+                </a>
+
+                <a className="react-native-link animated-btn" href={project.iosLink}>
+                  Apple App Store
+                </a>
+
+                <a className="react-native-link animated-btn" href={project.expoLink}>
+                  Expo
+                </a>
+
+                <a className="react-native-link animated-btn" href={project.githubLink}>
+                  <FontAwesomeIcon icon="code" />Live Code
+                </a>
+                
+                { auth.uid ? <DeleteProject project={project} id={id} /> : null }
+              </div>
+            )
+          }
         </div>
       )
     } else {
@@ -64,17 +89,41 @@ const ProjectDetails = (props) => {
           <div className='project-details__content dark-project-details__content'>
             {project.content}
           </div>
-  
-          <div className='links dark-links'>
-            <a href={project.websiteLink} className="animated-btn neon-animated-btn">
-              <FontAwesomeIcon icon="globe-americas" />Website
-            </a>
-  
-            <a href={project.githubLink} className="animated-btn neon-animated-btn">
-              <FontAwesomeIcon icon="code" />Live Code
-            </a>
-            { auth.uid ? <DeleteProject project={project} id={id} /> : null }
-          </div>
+
+          {
+            project.websiteLink ? (
+              <div className='links dark-links'>
+                <a href={project.websiteLink} className="animated-btn neon-animated-btn">
+                  <FontAwesomeIcon icon="globe-americas" />Website
+                </a>
+      
+                <a href={project.githubLink} className="animated-btn neon-animated-btn">
+                  <FontAwesomeIcon icon="code" />Live Code
+                </a>
+                { auth.uid ? <DeleteProject project={project} id={id} /> : null }
+              </div>
+            ) : (
+              <div className="links dark-links react-native-links">
+                <a className="react-native-link animated-btn neon-animated-btn" href={project.andriodLink}>
+                  Google Play Store
+                </a>
+
+                <a className="react-native-link animated-btn neon-animated-btn" href={project.iosLink}>
+                  Apple App Store
+                </a>
+
+                <a className="react-native-link animated-btn neon-animated-btn" href={project.expoLink}>
+                  Expo
+                </a>
+
+                <a className="react-native-link animated-btn neon-animated-btn" href={project.githubLink}>
+                  <FontAwesomeIcon icon="code" />Live Code
+                </a>
+                
+                { auth.uid ? <DeleteProject project={project} id={id} /> : null }
+              </div>
+            )
+          }
         </div>
       )
     }

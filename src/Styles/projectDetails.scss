@@ -2,7 +2,8 @@
   &__container {
     margin-left: 478.75px;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
   }
 
   &__banner-image {
@@ -114,4 +115,19 @@
 
 .dark-links {
   background-color: $lightBlack;
+}
+
+.react-native-links {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 80px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  column-gap: 20%;
+  row-gap: 40px;
 }
