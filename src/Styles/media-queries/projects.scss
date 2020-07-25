@@ -38,10 +38,6 @@
   }
 
   .project-details {
-    &__container {
-      height: initial;
-    }
-
     &__logo {
       img {
         width: 45%;
@@ -86,12 +82,46 @@
       .grid {
         grid-template-columns: 10% [s] 1fr [e] 10%;
       }
+      
+      .react-native-links {
+        width: initial;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+
+      .react-native-link {
+        width: initial !important;
+      }
     }
 
     .project-details__content {
       padding: 20% 0;
       width: 80%;
       margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .project-details__container {
+    .react-native-links {
+      width: 80%;
+      grid-template-columns: 1fr !important;
+
+      .react-native-link {
+        width: auto;
+        grid-template-columns: 1fr !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  @media (max-width: 1000px) {
+    .project-details__container {
+      .react-native-links {
+        column-gap: 0px;
+      }
     }
   }
 }
