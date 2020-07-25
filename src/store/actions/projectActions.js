@@ -31,7 +31,7 @@ export const filterProjects = (_id) => {
         })
         dispatch({ type: 'FILTER_PROJECTS_WITH_CATEGORY_ID', payload: filteredProjects })
       } else {
-        console.log('Empty')
+        dispatch({ type: 'FILTER_PROJECTS_WITH_CATEGORY_ID', payload: []})
       }
     })
   }

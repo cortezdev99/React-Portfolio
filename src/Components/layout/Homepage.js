@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
@@ -7,8 +7,6 @@ import image from '../../images/homepageImages/mountains.jpg'
 import darkImage from '../../images/homepageImages/darkHomepage.jpg'
 import ProjectList from '../projects/ProjectList'
 import { filterProjects } from '../../store/actions/projectActions'
-import ModalContext from '../../Contexts/ModalContext'
-
 class Homepage extends Component {
   constructor() {
     super() 
@@ -20,15 +18,6 @@ class Homepage extends Component {
       active3: false
     }
   }
-
-  // componentDidMount() {
-  //   const {
-  //     setModalIsOpen,
-  //     setModalContentText
-  //   } = useContext(ModalContext)
-
-  //   setModalIsOpen(true)
-  // }
 
   handleFilterProjects = (_id) => {
     this.props.filterProjects(_id)
@@ -64,29 +53,41 @@ class Homepage extends Component {
     }
   }
 
+  handleProjectsToShow = (projects, filteredProjects, darkmode) => {
+    if (filteredProjects.length > 0) {
+      if (darkmode) {
+        return (
+          <div className="homepage__projects dark-homepage__projects">
+            <ProjectList projects={projects} filteredProjects={filteredProjects}  />
+          </div>
+        )
+      } else {
+        return (
+          <div className="homepage__projects">
+            <ProjectList projects={projects} filteredProjects={filteredProjects}  />
+          </div>
+        )
+      }
+    } else {
+      if (darkmode) {
+        return (
+          <div className="homepage__projects dark-homepage__projects">
+            <ProjectList projects={projects} />
+          </div>
+        )
+      } else {
+        return (
+        <div className="homepage__projects">
+          <ProjectList projects={projects} />
+        </div>
+        )
+      }
+    }
+  }
+
   render() {
     const { projects, filteredProjects, darkmode } = this.props
-    const projectList = filteredProjects.length > 0 ? (
-      darkmode ? (
-        <div className="homepage__projects dark-homepage__projects">
-          <ProjectList projects={projects} filteredProjects={filteredProjects}  />
-        </div>
-      ) : (
-        <div className="homepage__projects">
-          <ProjectList projects={projects} filteredProjects={filteredProjects}  />
-        </div>
-      )
-    ) : (
-      darkmode ? (
-        <div className="homepage__projects dark-homepage__projects">
-            <ProjectList projects={projects} />
-        </div>
-      ) : (
-        <div className="homepage__projects">
-            <ProjectList projects={projects} />
-        </div>
-      )
-    )
+    const projectList = this.handleProjectsToShow(projects, filteredProjects, darkmode)
 
     if (!darkmode) {
       return (
