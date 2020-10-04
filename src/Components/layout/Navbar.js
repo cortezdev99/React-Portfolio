@@ -31,7 +31,7 @@ export class Navbar extends Component {
             <ul>
               <li><a href="https://github.com/Macattack1999-teck"><FontAwesomeIcon className="github" icon={["fab", "github"]} /></a></li>
               <li><a href="https://www.linkedin.com/in/michael-cortez-9634781a1"><FontAwesomeIcon className="linked-in" icon={["fab", "linkedin-in"]} /></a></li>
-              <li><a href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume">Resume</div></a></li>
+              <li><a href="https://www.canva.com/design/DAEJhkYHyqg/c7JkqT3rWyu39yad0m6l7w/view?utm_content=DAEJhkYHyqg&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"><div className="resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn"><div className="dark-mode"><div className="dark-mode-text">Darkmode</div>Off</div></div></li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ export class Navbar extends Component {
             <ul>
               <li><a href="https://github.com/Macattack1999-teck"><FontAwesomeIcon className="github" icon={["fab", "github"]} /></a></li>
               <li><a href="https://www.linkedin.com/in/michael-cortez-9634781a1"><FontAwesomeIcon className="linked-in" icon={["fab", "linkedin-in"]} /></a></li>
-              <li><a href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume">Resume</div></a></li>
+              <li><a href="https://www.canva.com/design/DAEJhkYHyqg/c7JkqT3rWyu39yad0m6l7w/view?utm_content=DAEJhkYHyqg&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"><div className="resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn"><div className="dark-mode"><div className="dark-mode-text">Darkmode</div>Off</div></div></li>
             </ul>
           </div>
@@ -79,7 +79,7 @@ export class Navbar extends Component {
             <ul>
               <li><a className="dark-button" href="https://github.com/Macattack1999-teck"><FontAwesomeIcon className="github dark-github" icon={["fab", "github"]} /></a></li>
               <li><a className="dark-button" href="https://www.linkedin.com/in/michael-cortez-9634781a1"><FontAwesomeIcon className="linked-in dark-linked-in" icon={["fab", "linkedin-in"]} /></a></li>
-              <li><a className="dark-button" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume dark-resume">Resume</div></a></li>
+              <li><a className="dark-button" href="https://www.canva.com/design/DAEJhkYHyqg/c7JkqT3rWyu39yad0m6l7w/view?utm_content=DAEJhkYHyqg&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"><div className="resume dark-resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn dark-button"><div className="dark-mode dark-dark-mode"><div className="dark-mode-text dark-text">Darkmode</div>On</div></div></li>
             </ul>
           </div>
@@ -102,7 +102,7 @@ export class Navbar extends Component {
             <ul>
               <li><a className="dark-button" href="https://github.com/Macattack1999-teck"><FontAwesomeIcon className="github dark-github" icon={["fab", "github"]} /></a></li>
               <li><a className="dark-button" href="https://www.linkedin.com/in/michael-cortez-9634781a1"><FontAwesomeIcon className="linked-in dark-linked-in" icon={["fab", "linkedin-in"]} /></a></li>
-              <li><a className="dark-button" href="https://docs.google.com/document/d/1t-wWDeHOpuUgrK6V57rJeL6Q7obu6Vqt3Ktv01Fd8yw/edit?usp=sharing"><div className="resume dark-resume">Resume</div></a></li>
+              <li><a className="dark-button" href="https://www.canva.com/design/DAEJhkYHyqg/c7JkqT3rWyu39yad0m6l7w/view?utm_content=DAEJhkYHyqg&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"><div className="resume dark-resume">Resume</div></a></li>
               <li><div onClick={() => darkmodeToggle()} className="dark-mode-btn dark-button"><div className="dark-mode dark-dark-mode"><div className="dark-mode-text dark-text">Darkmode</div>On</div></div></li>
             </ul>
           </div>
